@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Last Mile Delivery | Case Study - Otimização Logística</title>
+    <meta name="description"
+        content="Como desenvolvi um sistema de roteirização e entregas em tempo real com Django e geolocalização avançada.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .case-header { padding: 100px 0 60px; text-align: center; }
+        .case-content { max-width: 900px; margin: 0 auto; padding-bottom: 100px; }
+        .case-section { margin-bottom: 4rem; }
+        .case-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; background: var(--bg-surface); padding: 2rem; border-radius: 20px; border: 1px solid var(--border-color); margin-top: 3rem; }
+        .case-meta h4 { color: var(--primary-color); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .case-meta p { font-weight: 600; }
+        h2 { margin-bottom: 1.5rem; font-family: 'Outfit', sans-serif; }
+        p { font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.2rem; }
+        .arch-box { background: #0a0a0c; padding: 2rem; border-radius: 15px; border-left: 4px solid var(--primary-color); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav">
+            <a href="../index.html" class="logo">JOÃO<span>MATOS</span></a>
+            <div class="nav-links">
+                <a href="../index.html#projects">Voltar aos Projetos</a>
+            </div>
+            <a href="../index.html#contact" class="btn btn-primary" style="padding: 0.8rem 1.6rem; font-size: 0.85rem;">Contratar</a>
+        </div>
+    </header>
+
+    <section class="case-header">
+        <div class="container">
+            <span class="badge">Case Study: Logística Last Mile</span>
+            <h1>Last Mile: Otimização de <span class="gradient-text">Entregas em Tempo Real</span></h1>
+            
+            <div class="case-meta">
+                <div>
+                    <h4>Setor</h4>
+                    <p>Logística / Transportes</p>
+                </div>
+                <div>
+                    <h4>Especialidade</h4>
+                    <p>Geolocalização & Roteirização</p>
+                </div>
+                <div>
+                    <h4>Stack Técnica</h4>
+                    <p>Django, PostGIS, Real-time APIs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="case-content container">
+        <div class="case-section">
+            <h2>O Desafio</h2>
+            <p>
+                O gargalo de qualquer empresa de logística é a "última milha". A falta de roteirização inteligente e o rastreio impreciso geram custos elevados e insatisfação do cliente final. Era necessário um sistema que pudesse gerenciar motoristas, rotas e previsões de entrega com precisão cirúrgica.
+            </p>
+        </div>
+
+        <div class="case-section">
+            <h2>A Solução</h2>
+            <p>
+                O Last Mile Delivery foi projetado com foco em performance geográfica. O sistema utiliza PostGIS para cálculos de proximidade e APIs de geocodificação para otimização de rotas.
+            </p>
+            <ul style="color: var(--text-muted); font-size: 1.1rem; line-height: 2; margin-left: 1.5rem;">
+                <li><strong>Roteirização Inteligente:</strong> Algoritmos que agrupam entregas por proximidade geográfica.</li>
+                <li><strong>Rastreio em Tempo Real:</strong> Dashboard para o gestor acompanhar cada veículo no mapa.</li>
+                <li><strong>Geofencing:</strong> Notificações automáticas ao cliente quando o motorista entra em um raio de 1km.</li>
+                <li><strong>Gestão de Motoristas:</strong> App mobile web para confirmação de entrega e coleta de assinaturas digitais.</li>
+            </ul>
+        </div>
+
+        <div class="case-section">
+            <h2>Arquitetura Técnica</h2>
+            <p>Otimização de dados geográficos em alta escala:</p>
+            <div class="arch-box">
+                // Geo-Stack <br>
+                Database: PostgreSQL + Extensão PostGIS <br>
+                APIs: Integração com Google Maps / Mapbox para roteirização <br>
+                Real-time: WebSockets para atualização de posição no mapa <br>
+                Infra: Deploy em containers Docker com monitoramento de performance
+            </div>
+        </div>
+
+        <div class="case-section" style="text-align: center; background: var(--bg-surface); padding: 4rem; border-radius: 30px;">
+            <h2>O Resultado</h2>
+            <p style="font-size: 1.5rem; color: #fff;">"Redução de 20% na quilometragem rodada e aumento da satisfação do cliente com rastreio preciso."</p>
+            <a href="../index.html#contact" class="btn btn-primary" style="margin-top: 2rem;">Otimize sua Logística</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 João Matos | Engenharia de Software Corporativo.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
