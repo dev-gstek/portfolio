@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Victor | Especialista em Arquitetura Django & SaaS</title>
+    <meta name="description"
+        content="Arquiteto de Sistemas Django & Especialista SaaS. Desenvolvimento Full Cycle de soluções escaláveis, seguras e de alta performance para o seu negócio.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&family=JetBrains+Mono&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="container nav">
+            <a href="#" class="logo">JOÃO<span>VICTOR</span></a>
+            <div class="nav-links">
+                <a href="#projects">Projetos</a>
+                <a href="#skills">Toolbox</a>
+                <a href="#about">Sobre</a>
+                <a href="#contact">Contato</a>
+            </div>
+            <a href="#contact" class="btn btn-primary" style="padding: 0.8rem 1.6rem; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">Contratar</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <span class="badge animate">Disponível para Consultoria & Desenvolvimento</span>
+            <h1 class="animate" style="animation-delay: 0.1s;">Arquiteto de <span class="gradient-text">Sistemas
+                    Django</span> & Soluções Full Cycle.</h1>
+            <p class="animate" style="animation-delay: 0.2s;">Transformo requisitos complexos em softwares robustos,
+                seguros e performáticos. Do banco de dados ao deploy, cuidando de cada detalhe do ciclo de vida.</p>
+            <div class="hero-btns animate" style="animation-delay: 0.3s;">
+                <a href="#projects" class="btn btn-primary">
+                    <i class="fas fa-code-branch"></i> Ver Projetos
+                </a>
+                <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-borba-matos-902590383/" target="_blank"
+                    class="btn btn-secondary">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="badge">Cases de Sucesso</span>
+                <h2>Sistemas em Produção</h2>
+                <p>Projetos reais que resolvem problemas reais de grandes empresas.</p>
+            </div>
+
+            <div class="projects-grid">
+                <!-- Nexus IT -->
+                <article class="project-card">
+                    <div class="project-img" style="background-image: url('assets/hero_bg.png');"></div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="tag">RMM</span>
+                            <span class="tag">ERP</span>
+                            <span class="tag">Multi-tenant</span>
+                        </div>
+                        <h3>Nexus IT</h3>
+                        <p>Ecossistema completo para gestão de MSPs. Inclui monitoramento de ativos em tempo real,
+                            telemetria, automação e billing.</p>
+                        <div class="project-actions">
+                            <button class="btn-detail" onclick="openModal('nexus')">Ver Detalhes <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- EventPro -->
+                <article class="project-card">
+                    <div class="project-img" style="background: linear-gradient(135deg, #1e1b4b, #312e81);"></div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="tag">SaaS</span>
+                            <span class="tag">Logística</span>
+                            <span class="tag">Financeiro</span>
+                        </div>
+                        <h3>EventPro Universal</h3>
+                        <p>Gestão unificada para eventos artísticos. Controle de contratos, logística de equipe e
+                            reconciliação financeira em tempo real.</p>
+                        <div class="project-actions">
+                            <button class="btn-detail" onclick="openModal('eventpro')">Ver Detalhes <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- GSTeacher -->
+                <article class="project-card">
+                    <div class="project-img" style="background: linear-gradient(135deg, #064e3b, #065f46);"></div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="tag">AI/ML</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">Audio</span>
+                        </div>
+                        <h3>GSTeacher AI</h3>
+                        <p>Plataforma de coaching de idiomas com IA. Analisa pronúncia, fluência e gramática em tempo
+                            real.</p>
+                        <div class="project-actions">
+                            <button class="btn-detail" onclick="openModal('gsteacher')">Ver Detalhes <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Last Mile -->
+                <article class="project-card">
+                    <div class="project-img" style="background-image: url('assets/delivery_bg.png');"></div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="tag">Logística</span>
+                            <span class="tag">Geolocalização</span>
+                            <span class="tag">Real-time</span>
+                        </div>
+                        <h3>Last Mile Delivery</h3>
+                        <p>Sistema de roteirização e entregas. Rastreio em tempo real, geofencing e gestão de
+                            motoristas.</p>
+                        <div class="project-actions">
+                            <button class="btn-detail" onclick="openModal('lastmile')">Ver Detalhes <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Agendaê -->
+                <article class="project-card">
+                    <div class="project-img" style="background: linear-gradient(135deg, #7c2d12, #451a03);"></div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="tag">SaaS</span>
+                            <span class="tag">Booking</span>
+                            <span class="tag">Payments</span>
+                        </div>
+                        <h3>Agendaê</h3>
+                        <p>Plataforma SaaS de agendamentos profissionais com recorrência complexa e checkout integrado.
+                        </p>
+                        <div class="project-actions">
+                            <button class="btn-detail" onclick="openModal('agendae')">Ver Detalhes <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- MFO Financial -->
+                <article class="project-card">
+                    <div class="project-img" style="background-image: url('assets/finance_bg.png');"></div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="tag">Fintech</span>
+                            <span class="tag">B2B2C</span>
+                            <span class="tag">Vault</span>
+                        </div>
+                        <h3>MFO Financial</h3>
+                        <p>Gestão financeira avançada com cofre de arquivos criptografado e integração Open Finance.</p>
+                        <div class="project-actions">
+                            <button class="btn-detail" onclick="openModal('finance')">Ver Detalhes <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <div class="container">
+            <div class="about-wrapper" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;">
+                <div class="about-text">
+                    <span class="badge">Trajetória & Visão</span>
+                    <h2 style="margin-bottom: 1.5rem;">Arquiteto de Sistemas <span class="gradient-text">Full Cycle</span></h2>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.5rem;">
+                        Transformo requisitos de negócio complexos em soluções de software robustas, seguras e prontas para produção. Com foco no ecossistema Python/Django, garanto excelência desde a concepção da arquitetura até o deploy final em ambientes Linux.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 2rem;">
+                        Mais do que apenas desenvolver código, meu foco é entregar **valor real para o negócio** através de automação, performance e escalabilidade.
+                    </p>
+
+                    <div class="about-highlights" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                        <div class="highlight-item">
+                            <i class="fas fa-rocket" style="color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                            <h4 style="margin-bottom: 0.3rem;">Arquitetura Escalável</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Modelagem avançada com PostgreSQL e foco em performance.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-cog" style="color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                            <h4 style="margin-bottom: 0.3rem;">Automação & Async</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Processamento em background com Celery e Redis.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fas fa-shield-alt" style="color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                            <h4 style="margin-bottom: 0.3rem;">Segurança & Multi-tenant</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Controle de acesso granular e proteção de dados.</p>
+                        </div>
+                        <div class="highlight-item">
+                            <i class="fab fa-docker" style="color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                            <h4 style="margin-bottom: 0.3rem;">Infra Moderna</h4>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Deploy seguro com Docker e servidores Linux.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about-card" style="background: var(--bg-surface); padding: 2.5rem; border-radius: 20px; border: 1px solid var(--border-color); position: sticky; top: 100px;">
+                    <h3 style="margin-bottom: 1.5rem; font-family: 'Outfit', sans-serif;">Stack Principal</h3>
+                    <div class="stack-tags" style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                        <span class="tag">Python</span>
+                        <span class="tag">Django</span>
+                        <span class="tag">Flask</span>
+                        <span class="tag">PostgreSQL</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Linux</span>
+                        <span class="tag">Redis</span>
+                        <span class="tag">Celery</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">APIs REST</span>
+                        <span class="tag">Nginx</span>
+                        <span class="tag">Git</span>
+                    </div>
+                    <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border-color);">
+                    <p style="font-style: italic; color: var(--text-muted); font-size: 0.95rem;">
+                        "Meu objetivo é desenvolver sistemas que não apenas funcionem, mas que escalem junto com o negócio."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="section" style="background: var(--bg-surface);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tecnologias & Ferramentas</h2>
+                <p>Domínio profundo do ecossistema Django e infraestrutura moderna.</p>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-python"></i>
+                    <h4>Django/Python</h4>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-database"></i>
+                    <h4>PostgreSQL</h4>
+                </div>
+                <div class="skill-card">
+                    <i class="fab fa-docker"></i>
+                    <h4>Docker</h4>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Redis/Celery</h4>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-cloud"></i>
+                    <h4>Linux/Deploy</h4>
+                </div>
+                <div class="skill-card">
+                    <i class="fas fa-microchip"></i>
+                    <h4>Integração IA</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container" style="text-align: center; max-width: 800px;">
+            <h2>Inicie seu Projeto</h2>
+            <p style="margin-bottom: 3rem;">Precisa de um sistema escalável, seguro e bem arquitetado? Vamos conversar
+                sobre como posso ajudar o seu negócio.</p>
+
+            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+                <a href="mailto:joao.matos@gstek.com.br" class="btn btn-primary">
+                    <i class="fas fa-envelope"></i> joao.matos@gstek.com.br
+                </a>
+                <a href="https://wa.me/5562982053988" class="btn btn-secondary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> (62) 98205-3988
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 João Victor Borba Matos | GSTek. Built with Django & Excellence.</p>
+        </div>
+    </footer>
+
+    <!-- Modals -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="modalBody">
+                <!-- Content injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
