@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>João Victor Borba Matos | Currículo Profissional - Engenharia de Software</title>
+    <meta name="description"
+        content="Currículo de João Victor Borba Matos. Engenheiro de Software especialista em Django, Python, PostgreSQL, Docker e automação de sistemas corporativos.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #0ea5e9;
+            --primary-glow: rgba(14, 165, 233, 0.3);
+            --secondary: #6366f1;
+            --accent: #10b981;
+            --bg-dark: #020617;
+            --bg-surface: #0f172a;
+            --bg-card: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border: rgba(255, 255, 255, 0.08);
+            --glass: rgba(15, 23, 42, 0.85);
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            padding: 3rem 0;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Top Actions for Screen Viewing */
+        .cv-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition);
+            cursor: pointer;
+            font-size: 0.9rem;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px var(--primary-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px var(--primary-glow);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Paper CV Wrapper */
+        .cv-paper {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 3.5rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cv-paper::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+
+        /* Header block */
+        .cv-header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .cv-name h1 {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-title {
+            font-size: 1.25rem;
+            color: var(--primary);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .cv-contact {
+            text-align: right;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+
+        .cv-contact a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .cv-contact a:hover {
+            color: var(--primary);
+        }
+
+        .cv-contact i {
+            width: 20px;
+            text-align: center;
+            margin-right: 0.4rem;
+            color: var(--primary);
+        }
+
+        /* Profile Block */
+        .cv-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .cv-section-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .cv-section-title i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .cv-profile-text {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        /* Skills Layout */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .skill-group h4 {
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .skill-badge {
+            font-size: 0.85rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            font-family: 'JetBrains Mono', monospace;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .timeline-item {
+            position: relative;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .company-name {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .job-title {
+            font-size: 1rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .timeline-date {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .timeline-content {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .timeline-content p {
+            margin-bottom: 0.5rem;
+            text-align: justify;
+        }
+
+        .timeline-bullets {
+            list-style-type: none;
+            padding-left: 0.5rem;
+        }
+
+        .timeline-bullets li {
+            position: relative;
+            padding-left: 1.25rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .timeline-bullets li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Freelance Projects Grid */
+        .freelance-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.25rem;
+        }
+
+        .freelance-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.25rem;
+            transition: var(--transition);
+        }
+
+        .freelance-card:hover {
+            border-color: rgba(14, 165, 233, 0.25);
+            background: rgba(14, 165, 233, 0.02);
+        }
+
+        .freelance-card h4 {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.4rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .freelance-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+            text-align: justify;
+        }
+
+        .freelance-tech {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: var(--primary);
+            opacity: 0.9;
+        }
+
+        /* Grid for Education & Extra Info */
+        .cv-grid-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .edu-item h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        .edu-school {
+            font-size: 0.95rem;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .edu-date {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-list {
+            list-style-type: none;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+
+        .cert-list li {
+            position: relative;
+            padding-left: 1.25rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .cert-list li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .cert-date {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            opacity: 0.7;
+            margin-left: 0.4rem;
+        }
+
+        /* Footer info */
+        .cv-footer {
+            margin-top: 3.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--border);
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .cv-footer a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 1.5rem 0;
+            }
+            .cv-paper {
+                padding: 2rem;
+            }
+            .cv-header {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                text-align: center;
+            }
+            .cv-contact {
+                text-align: center;
+                align-items: center;
+            }
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            .freelance-grid {
+                grid-template-columns: 1fr;
+            }
+            .cv-grid-two-col {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .cv-name h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        /* ----------------------------------------------------
+           PRINT RULES: Optimizes for standard A4 paper (light mode)
+           ---------------------------------------------------- */
+        @media print {
+            :root {
+                --primary: #0284c7; /* darker blue for readable printing */
+                --secondary: #4f46e5;
+                --text-primary: #0f172a;
+                --text-secondary: #334155;
+                --border: #cbd5e1;
+            }
+
+            @page {
+                size: A4;
+                margin: 1.2cm 1.5cm;
+            }
+
+            body {
+                background-color: #ffffff !important;
+                color: #0f172a !important;
+                padding: 0 !important;
+                font-size: 9.5pt !important;
+                line-height: 1.4 !important;
+            }
+
+            .container {
+                max-width: 100% !important;
+                width: 100% !important;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+
+            .cv-actions {
+                display: none !important; /* Hide screen buttons */
+            }
+
+            .cv-paper {
+                background: #ffffff !important;
+                border: none !important;
+                border-radius: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                overflow: visible !important;
+            }
+
+            .cv-paper::before {
+                display: none !important;
+            }
+
+            .cv-header {
+                border-bottom: 2px solid #0f172a !important;
+                padding-bottom: 10pt !important;
+                margin-bottom: 15pt !important;
+                grid-template-columns: 1fr auto !important;
+                gap: 10pt !important;
+            }
+
+            .cv-name h1 {
+                font-size: 22pt !important;
+                color: #0f172a !important;
+                margin-bottom: 2pt !important;
+            }
+
+            .cv-title {
+                font-size: 11pt !important;
+                color: var(--primary) !important;
+            }
+
+            .cv-contact {
+                text-align: right !important;
+                font-size: 8.5pt !important;
+                gap: 2pt !important;
+                color: #334155 !important;
+            }
+
+            .cv-contact a {
+                color: #0f172a !important;
+            }
+
+            .cv-contact i {
+                color: var(--primary) !important;
+            }
+
+            .cv-section {
+                margin-bottom: 14pt !important;
+                page-break-inside: avoid;
+            }
+
+            .cv-section-title {
+                font-size: 11pt !important;
+                border-bottom: 1.5px solid #0f172a !important;
+                padding-bottom: 3pt !important;
+                margin-bottom: 8pt !important;
+                color: #0f172a !important;
+            }
+
+            .cv-section-title i {
+                color: var(--primary) !important;
+                font-size: 10pt !important;
+            }
+
+            .cv-profile-text {
+                font-size: 9pt !important;
+                color: #1e293b !important;
+                line-height: 1.4 !important;
+            }
+
+            .skills-container {
+                gap: 10pt !important;
+            }
+
+            .skill-group h4 {
+                font-size: 8.5pt !important;
+                margin-bottom: 2pt !important;
+            }
+
+            .skill-badge {
+                font-size: 7.5pt !important;
+                padding: 1.5pt 4pt !important;
+                border: 1px solid #94a3b8 !important;
+                color: #1e293b !important;
+                background: #f8fafc !important;
+                border-radius: 4px !important;
+            }
+
+            .timeline {
+                gap: 10pt !important;
+            }
+
+            .company-name {
+                font-size: 10pt !important;
+                color: #0f172a !important;
+            }
+
+            .job-title {
+                font-size: 9pt !important;
+            }
+
+            .timeline-date {
+                font-size: 8pt !important;
+                color: #334155 !important;
+                border: 1px solid #cbd5e1 !important;
+                background: #f8fafc !important;
+                padding: 1pt 4pt !important;
+            }
+
+            .timeline-content {
+                font-size: 8.5pt !important;
+                color: #1e293b !important;
+            }
+
+            .timeline-content p {
+                margin-bottom: 2pt !important;
+            }
+
+            .timeline-bullets li {
+                margin-bottom: 1pt !important;
+            }
+
+            .freelance-grid {
+                gap: 8pt !important;
+            }
+
+            .freelance-card {
+                background: #f8fafc !important;
+                border: 1px solid #cbd5e1 !important;
+                border-radius: 8px !important;
+                padding: 8pt !important;
+                page-break-inside: avoid;
+            }
+
+            .freelance-card h4 {
+                font-size: 9pt !important;
+                color: #0f172a !important;
+                margin-bottom: 2pt !important;
+            }
+
+            .freelance-card p {
+                font-size: 8pt !important;
+                color: #334155 !important;
+                margin-bottom: 4pt !important;
+            }
+
+            .freelance-tech {
+                font-size: 7.5pt !important;
+                color: #0369a1 !important;
+            }
+
+            .edu-item h4 {
+                font-size: 9.5pt !important;
+            }
+
+            .edu-school {
+                font-size: 8.5pt !important;
+            }
+
+            .edu-date {
+                font-size: 7.5pt !important;
+                margin-bottom: 2pt !important;
+            }
+
+            .cert-list {
+                gap: 2pt !important;
+            }
+
+            .cert-list li {
+                font-size: 8pt !important;
+                color: #334155 !important;
+            }
+
+            .cert-date {
+                font-size: 7.5pt !important;
+                color: #64748b !important;
+            }
+
+            .cv-footer {
+                margin-top: 15pt !important;
+                padding-top: 8pt !important;
+                font-size: 7.5pt !important;
+                border-top: 1px solid #cbd5e1 !important;
+                color: #64748b !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        
+        <!-- Action Buttons for screen users -->
+        <div class="cv-actions">
+            <a href="index.html" class="btn btn-secondary">
+                <i class="fas fa-arrow-left"></i> Voltar ao Portfólio
+            </a>
+            <button onclick="window.print()" class="btn btn-primary">
+                <i class="fas fa-print"></i> Imprimir / Salvar PDF
+            </button>
+        </div>
+
+        <!-- The actual CV Paper Document -->
+        <div class="cv-paper">
+            
+            <!-- Header section -->
+            <header class="cv-header">
+                <div class="cv-name">
+                    <h1>João Victor Borba Matos</h1>
+                    <div class="cv-title">Engenheiro de Software | Especialista Django & Automação</div>
+                </div>
+                <div class="cv-contact">
+                    <div><i class="fas fa-envelope"></i> <a href="mailto:joao.matos@gstek.com.br">joao.matos@gstek.com.br</a></div>
+                    <div><i class="far fa-envelope"></i> <a href="mailto:oficialjvbm@gmail.com">oficialjvbm@gmail.com</a></div>
+                    <div><i class="fas fa-phone"></i> <a href="tel:+5562982053988">(62) 98205-3988</a></div>
+                    <div><i class="fas fa-map-marker-alt"></i> Goiânia, GO</div>
+                    <div><i class="fab fa-linkedin"></i> <a href="https://www.linkedin.com/in/jo%C3%A3o-victor-borba-matos-902590383/" target="_blank">linkedin.com/in/joao-victor-matos</a></div>
+                    <div><i class="fas fa-globe"></i> <a href="https://portfolio.gstek.com.br" target="_blank">portfolio.gstek.com.br</a></div>
+                </div>
+            </header>
+
+            <!-- Objective Section -->
+            <section class="cv-section">
+                <h3 class="cv-section-title"><i class="fas fa-rocket"></i> Perfil Profissional</h3>
+                <div class="cv-profile-text">
+                    Engenheiro de Software com sólida trajetória no desenvolvimento de sistemas corporativos de alta performance, plataformas SaaS multi-tenant e ecossistemas complexos de automação comercial. Especialista em Python (Django e Flask) e modelagem de dados avançada com PostgreSQL, integrando processamento em background de alta disponibilidade com Celery e Redis. Experiência consolidada no ciclo completo de engenharia (Full-cycle), desde a concepção técnica e estruturação de bancos de dados até o deploy automatizado utilizando infraestrutura moderna com Docker e servidores Linux (Nginx). Focado no desenvolvimento de arquiteturas escaláveis, seguras (RBAC, criptografia) e de alto valor de negócio que eliminam o retrabalho e promovem a eficiência operacional de ponta a ponta.
+                </div>
+            </section>
+
+            <!-- Skills Section -->
+            <section class="cv-section">
+                <h3 class="cv-section-title"><i class="fas fa-tools"></i> Toolbox & Competências</h3>
+                <div class="skills-container">
+                    <div class="skill-group">
+                        <h4>Linguagens & Frameworks</h4>
+                        <div class="skill-list">
+                            <span class="skill-badge">Python</span>
+                            <span class="skill-badge">Django MVT / DRF</span>
+                            <span class="skill-badge">Flask</span>
+                            <span class="skill-badge">FastAPI</span>
+                            <span class="skill-badge">JavaScript (ES6+)</span>
+                            <span class="skill-badge">TypeScript</span>
+                            <span class="skill-badge">Java (OOP)</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Bancos & Infraestrutura</h4>
+                        <div class="skill-list">
+                            <span class="skill-badge">PostgreSQL</span>
+                            <span class="skill-badge">PostGIS</span>
+                            <span class="skill-badge">Docker & Compose</span>
+                            <span class="skill-badge">Linux (Nginx)</span>
+                            <span class="skill-badge">Celery & Redis</span>
+                            <span class="skill-badge">Active Directory</span>
+                            <span class="skill-badge">Git & CI/CD</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Idiomas & Qualidades</h4>
+                        <div class="skill-list">
+                            <span class="skill-badge" style="border-color: rgba(16, 185, 129, 0.3); color: var(--accent);">Inglês</span>
+                            <span class="skill-badge" style="border-color: rgba(16, 185, 129, 0.3); color: var(--accent);">Espanhol</span>
+                            <span class="skill-badge">Trabalho em Equipe</span>
+                            <span class="skill-badge">Fácil Adaptação</span>
+                            <span class="skill-badge">Fácil Aprendizado</span>
+                            <span class="skill-badge">Liderança & Gestão</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Professional Experience Section -->
+            <section class="cv-section">
+                <h3 class="cv-section-title"><i class="fas fa-briefcase"></i> Experiência Profissional</h3>
+                <div class="timeline">
+                    
+                    <!-- Workshow -->
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <span class="company-name">Workshow Produções Artísticas LTDA</span>
+                                <div class="job-title">Assistente de TI & Analista de Infraestrutura (Líder de TI)</div>
+                            </div>
+                            <span class="timeline-date">Fev 2022 - Atual</span>
+                        </div>
+                        <div class="timeline-content">
+                            <p>
+                                Responsável pela liderança técnica do departamento de TI da empresa, gerenciando ativamente a infraestrutura de redes, suporte técnico especializado, servidores de alta disponibilidade e administração do ambiente Windows Server via Active Directory.
+                            </p>
+                            <ul class="timeline-bullets">
+                                <li><strong>Desenvolvimento do EventPro Universal:</strong> Projetou e arquitetou do zero uma plataforma SaaS corporativa integrada para gestão logística e financeira de eventos artísticos complexos.</li>
+                                <li><strong>Otimização Financeira:</strong> Implementou lógica avançada de reconciliação de contas em tempo real para auditoria de contratos, cachês, despesas operacionais e deslocamento de grandes equipes, <strong>eliminando 100% de erros manuais</strong> de faturamento e <strong>economizando 15% nos custos logísticos</strong>.</li>
+                                <li><strong>Automação Local & Cloud:</strong> Criou microserviços e sistemas de integração locais para automação de tarefas críticas de TI, diminuindo drasticamente incidentes de conectividade corporativa.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- CASAG -->
+                    <div class="timeline-item">
+                        <div class="timeline-header">
+                            <div>
+                                <span class="company-name">CASAG – Caixa de Assistência dos Advogados de Goiás</span>
+                                <div class="job-title">Auxiliar de TI & Desenvolvedor de Sistemas Web</div>
+                            </div>
+                            <span class="timeline-date">Jul 2021 - Jan 2022</span>
+                        </div>
+                        <div class="timeline-content">
+                            <p>
+                                Prestou suporte técnico abrangente a usuários de redes, executando desde montagem até diagnósticos de hardware e software complexos.
+                            </p>
+                            <ul class="timeline-bullets">
+                                <li><strong>Desenvolvimento Intranet:</strong> Colaborou de forma ativa no ciclo de desenvolvimento de aplicações de intranet institucionais e painéis de dados corporativos.</li>
+                                <li><strong>Integração de Sistemas:</strong> Auxiliou em rotinas cruciais de integração e sincronização de dados entre múltiplos sistemas internos, assegurando a interoperabilidade.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Projects (Freelancer / Portfólio) -->
+            <section class="cv-section">
+                <h3 class="cv-section-title"><i class="fas fa-code-branch"></i> Projetos de Destaque (Freelancer / Portfólio)</h3>
+                <div class="freelance-grid">
+                    
+                    <!-- Nexus IT -->
+                    <div class="freelance-card">
+                        <h4>Nexus IT <span class="freelance-tech">ERP & RMM</span></h4>
+                        <p>Plataforma para MSPs (provedores de TI). Desenvolveu arquitetura multi-tenant robusta isolada por schemas Postgres, telemetria e monitoramento de status em tempo real de computadores/servidores, painel de helpdesk interativo e cobrança automatizada.</p>
+                        <div class="freelance-tech">Django • PostgreSQL • Redis • Docker • Nginx</div>
+                    </div>
+
+                    <!-- Last Mile Delivery -->
+                    <div class="freelance-card">
+                        <h4>Last Mile Delivery <span class="freelance-tech">Logística</span></h4>
+                        <p>Sistema completo de roteirização inteligente e rastreabilidade total de frotas. Integra geofencing em tempo real via PostGIS para otimização de rotas e entrega física, diminuindo gastos de frete significativamente.</p>
+                        <div class="freelance-tech">Django • PostGIS • Docker • Real-time APIs</div>
+                    </div>
+
+                    <!-- GSTeacher AI -->
+                    <div class="freelance-card">
+                        <h4>GSTeacher AI <span class="freelance-tech">AI & Áudio</span></h4>
+                        <p>Plataforma SaaS para coaching linguístico integrado à inteligência artificial. Processa fluxo de áudio em tempo real para análise de fluência, gramática e precisão de pronúncia com retornos inteligentes baseados em IA.</p>
+                        <div class="freelance-tech">Django • AI Integration • Audio Stream APIs</div>
+                    </div>
+
+                    <!-- Agendaê -->
+                    <div class="freelance-card">
+                        <h4>Agendaê <span class="freelance-tech">Booking SaaS</span></h4>
+                        <p>Ecossistema de reserva digital automatizado. Reduz o retrabalho operacional de marcações em até 80% através de agendas integradas em tempo real e gateway de faturamento automático de transações.</p>
+                        <div class="freelance-tech">Django • PostgreSQL • Asaas Payment API</div>
+                    </div>
+
+                    <!-- Other Freelance Systems -->
+                    <div class="freelance-card" style="grid-column: 1 / -1; background: rgba(255, 255, 255, 0.01); border-style: dashed;">
+                        <h4 style="font-size: 0.95rem; text-transform: uppercase; color: var(--text-secondary);"><i class="fas fa-cubes"></i> Outros Sistemas Customizados Desenvolvidos</h4>
+                        <p style="font-size: 0.85rem; line-height: 1.5; color: var(--text-secondary); margin-bottom: 0;">
+                            Desenvolvimento e manutenção contínua de múltiplos sistemas web transacionais com Flask e PostgreSQL para automação interna de clientes, englobando: <strong>Controle de Estoque</strong> (rastreamento de itens e relatórios de inventário), <strong>Gerenciamento de Clientes</strong> (operações de cadastro completo), <strong>Controle de Pagamentos</strong> (registro e monitoramento de transações), <strong>Lembretes de Compromissos</strong> (agendamento com notificações) e <strong>Controle de Atendimento de Pacientes</strong> (agendamento e histórico de consultas).
+                        </p>
+                        <div class="freelance-tech" style="margin-top: 0.5rem;">Python • Flask • PostgreSQL</div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- Grid for Education & Extra Info -->
+            <div class="cv-grid-two-col">
+                
+                <!-- Education -->
+                <section class="cv-section">
+                    <h3 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Formação</h3>
+                    <div class="edu-item">
+                        <h4>Análise e Desenvolvimento de Sistemas</h4>
+                        <div class="edu-school">UNIGOIAS, Goiânia - GO</div>
+                        <div class="edu-date">Junho 2021 - Dezembro 2023</div>
+                    </div>
+                </section>
+
+                <!-- Certificates -->
+                <section class="cv-section">
+                    <h3 class="cv-section-title"><i class="fas fa-certificate"></i> Certificações</h3>
+                    <ul class="cert-list">
+                        <li>Desenvolvimento Web com Python e Django <span class="cert-date">(Atual)</span></li>
+                        <li>Python do Básico ao Avançado / Python com RPA <span class="cert-date">(Atual)</span></li>
+                        <li>Java - Programação Orientada a Objetos <span class="cert-date">(Mar 2024)</span></li>
+                        <li>Microsoft Windows Server 2019 <span class="cert-date">(Jan 2023)</span></li>
+                        <li>Arquitetura de Redes <span class="cert-date">(Jan 2023)</span></li>
+                        <li>JavaScript e TypeScript <span class="cert-date">(Dez 2021)</span></li>
+                    </ul>
+                </section>
+
+            </div>
+
+            <!-- Footer / Copyright -->
+            <footer class="cv-footer">
+                Documento atualizado em 2026. Versão web interativa disponível em: <a href="https://portfolio.gstek.com.br/curriculo.html" target="_blank">portfolio.gstek.com.br/curriculo.html</a>
+            </footer>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
