@@ -1,4 +1,28 @@
 const projects = {
+    promobot: {
+        title: "Promobot SaaS",
+        description: "Plataforma de automação e disparo automático de ofertas de afiliados em massa para grupos de WhatsApp. O sistema oferece suporte a múltiplos locatários (multi-tenant) e integração simplificada com a Evolution API v2 para gerenciamento dinâmico de instâncias de WhatsApp.",
+        features: [
+            "Piloto Automático inteligente de disparos com cronograma",
+            "Gestão multi-tenant de instâncias WhatsApp via Evolution API",
+            "Scraping automático de produtos (Shopee, ML, Amazon)",
+            "Conversão e encurtamento dinâmico de links de afiliado",
+            "Dashboard completo com contador de cliques e logs de envio"
+        ],
+        stack: ["Django", "Evolution API", "PostgreSQL", "Docker", "Python Scrapers"],
+        code: `class Oferta(models.Model):
+    usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ofertas')
+    plataforma = models.CharField(max_length=2, choices=Plataforma.choices)
+    url_original = models.URLField(max_length=2000)
+    url_afiliado = models.URLField(max_length=2000, blank=True, null=True)
+    preco_oferta = models.DecimalField(max_digits=10, decimal_places=2)
+    cliques = models.PositiveIntegerField(default=0)
+    enviado = models.BooleanField(default=False)
+    
+    def registrar_clique(self):
+        self.cliques += 1
+        self.save(update_fields=['cliques'])`
+    },
     nexus: {
         title: "Nexus IT - RMM & ERP",
         description: "Uma plataforma de monitoramento e gerenciamento remoto (RMM) integrada a um ERP robusto para MSPs (Managed Service Providers). O sistema permite o controle total de ativos, inventário de hardware/software, execução de scripts remotos e faturamento automatizado baseado em consumo.",
