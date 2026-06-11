@@ -7,9 +7,10 @@ const projects = {
             "Gestão multi-tenant de instâncias WhatsApp via Evolution API",
             "Scraping automático de produtos (Shopee, ML, Amazon)",
             "Conversão e encurtamento dinâmico de links de afiliado",
-            "Dashboard completo com contador de cliques e logs de envio"
+            "Dashboard completo com contador de cliques e logs de envio",
+            "Programa de Cashback Integrado via Pix e painel de indicações"
         ],
-        stack: ["Django", "Evolution API", "PostgreSQL", "Docker", "Python Scrapers"],
+        stack: ["Django", "Evolution API", "HTMX", "PostgreSQL", "Docker", "Python Scrapers"],
         code: `class Oferta(models.Model):
     usuario = models.ForeignKey(User, on_delete=models.CASCADE, related_name='ofertas')
     plataforma = models.CharField(max_length=2, choices=Plataforma.choices)
@@ -22,6 +23,61 @@ const projects = {
     def registrar_clique(self):
         self.cliques += 1
         self.save(update_fields=['cliques'])`
+    },
+    chrome_extension: {
+        title: "WhatsApp CRM Pro",
+        description: "MVP de extensão para Google Chrome focada em CRM para WhatsApp Web e prospecção B2B. A extensão permite extrair dados de sites empresariais (leads), organizar contatos em um funil Kanban injetado na interface do WhatsApp Web e sincronizar os dados com um painel Django REST API.",
+        features: [
+            "Funil Kanban integrado diretamente à interface do WhatsApp Web",
+            "Tags personalizadas e anotações para conversas individuais",
+            "Content Scraper em diretórios para captação automática de leads com um clique",
+            "Sincronização assíncrona em background via Chrome Storage e Django REST API",
+            "Service Worker para controle central de mensageria na extensão"
+        ],
+        stack: ["JavaScript (Manifest V3)", "Chrome Storage API", "Content Scripts", "REST API (Fetch)"],
+        code: `chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  if (request.action === 'save_lead') {
+    chrome.storage.local.get(['jwt_token', 'leads'], async (result) => {
+      const leads = result.leads || [];
+      const token = result.jwt_token;
+      const newLead = { name: request.lead.name, phone: request.lead.phone, status: 'novo' };
+      
+      if (token && !token.startsWith('mock_token_')) {
+        const saved = await apiCall('leads/', 'POST', newLead, token);
+        leads.push(saved);
+      } else {
+        leads.push({ id: 'lead_' + Date.now(), ...newLead });
+      }
+      chrome.storage.local.set({ leads }, () => sendResponse({ success: true }));
+    });
+    return true; // Keep message channel open
+  }
+});`
+    },
+    gstek_notas: {
+        title: "GSTek Notas",
+        description: "Uma plataforma SaaS Multi-Tenant construída com Django para automação de faturamento, emissão manual de recibos/notas e disparo automatizado de e-mails com arquivos PDF anexados. Possui isolamento completo de credenciais SMTP para cada cliente cadastrado.",
+        features: [
+            "Arquitetura SaaS Multi-Tenant baseada no modelo Company",
+            "CompanyMiddleware para verificação de configurações SMTP obrigatórias",
+            "Limites de faturamento e de cadastro de clientes baseados no plano (tier)",
+            "Motor de disparos de e-mail usando chaves SMTP individuais por empresa",
+            "Comando batch (management command) de faturamento automatizado mensal"
+        ],
+        stack: ["Django 6.0", "PostgreSQL", "SMTP Gateway", "Docker Compose"],
+        code: `class CompanyMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        if request.user.is_authenticated:
+            request.company = request.user.company
+            if request.company and not request.company.smtp_host:
+                exempt = [reverse('configuracoes'), reverse('logout'), reverse('login')]
+                if not (request.path.startswith('/admin/') or request.path in exempt):
+                    messages.warning(request, "Configure seu servidor SMTP de E-mail.")
+                    return redirect('configuracoes')
+        return self.get_response(request)`
     },
     nexus: {
         title: "Nexus IT - RMM & ERP",

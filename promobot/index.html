@@ -50,7 +50,7 @@
                 </div>
                 <div>
                     <h4>Stack Técnica</h4>
-                    <p>Django, Evolution API, PostgreSQL, Docker</p>
+                    <p>Django, Evolution API, HTMX, PostgreSQL, Docker</p>
                 </div>
             </div>
         </div>
@@ -74,6 +74,7 @@
                 <li><strong>WhatsApp Multi-Instância:</strong> Conexão dinâmica e estável via Evolution API v2, criando canais individuais para cada cliente.</li>
                 <li><strong>Scraping & Conversão Instantânea:</strong> Extração automatizada de metadados, preços, títulos e imagens diretamente da URL original com geração imediata do link de afiliado.</li>
                 <li><strong>Dashboard de Métricas:</strong> Rastreamento integrado de cliques e logs de envio por grupo, fornecendo visibilidade total de conversão.</li>
+                <li><strong>Cashback & Indicações:</strong> Programa de indicações com painel de saques recorrentes via Pix com regras de compliance de CNPJ integradas.</li>
             </ul>
         </div>
 
@@ -81,8 +82,9 @@
             <h2>Arquitetura & Integração</h2>
             <p>Infraestrutura unificada com foco em estabilidade e segurança (Anti-Ban):</p>
             <div class="arch-box">
-                // Django Backend <br>
+                // Django & HTMX Backend <br>
                 Core: Django 5.x com PostgreSQL para gerenciamento de ofertas, planos e assinaturas Asaas. <br>
+                Frontend: Interface atualizada assincronamente com HTMX (evitando reloads completos de tela). <br>
                 WhatsApp Engine: Evolution API v2 (Node.js) com isolamento de instâncias via API REST. <br>
                 Autopilot & Scrapers: Script em background (Python) consumindo rotinas periódicas anti-ban. <br>
                 Deploy: Orquestração em containers Docker para rápida escala e resiliência na VPS.

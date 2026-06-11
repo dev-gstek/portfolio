@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WhatsApp CRM Pro | Case Study - Extensão Chrome & B2B Prospecting</title>
+    <meta name="description"
+        content="Como desenvolvi o WhatsApp CRM Pro, uma extensão para Google Chrome (Manifest V3) para funil de vendas e prospecção B2B integrado ao WhatsApp Web.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .case-header { padding: 100px 0 60px; text-align: center; }
+        .case-content { max-width: 900px; margin: 0 auto; padding-bottom: 100px; }
+        .case-section { margin-bottom: 4rem; }
+        .case-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; background: var(--bg-surface); padding: 2rem; border-radius: 20px; border: 1px solid var(--border-color); margin-top: 3rem; }
+        .case-meta h4 { color: var(--primary-color); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .case-meta p { font-weight: 600; }
+        h2 { margin-bottom: 1.5rem; font-family: 'Outfit', sans-serif; }
+        p { font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.2rem; }
+        .arch-box { background: #0a0a0c; padding: 2rem; border-radius: 15px; border-left: 4px solid var(--primary-color); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav">
+            <a href="../index.html" class="logo">JOÃO<span>MATOS</span></a>
+            <div class="nav-links">
+                <a href="../index.html#projects">Voltar aos Projetos</a>
+            </div>
+            <a href="../index.html#contact" class="btn btn-primary" style="padding: 0.8rem 1.6rem; font-size: 0.85rem;">Contratar</a>
+        </div>
+    </header>
+
+    <section class="case-header">
+        <div class="container">
+            <span class="badge">Case Study: Chrome Extension & CRM</span>
+            <h1>WhatsApp CRM Pro: Funil Kanban & <span class="gradient-text">Prospecção B2B</span></h1>
+            
+            <div class="case-meta">
+                <div>
+                    <h4>Setor</h4>
+                    <p>CRM / Vendas / B2B</p>
+                </div>
+                <div>
+                    <h4>Minha Atuação</h4>
+                    <p>Desenvolvimento da Extensão & API de Integração</p>
+                </div>
+                <div>
+                    <h4>Stack Técnica</h4>
+                    <p>Manifest V3, Chrome Storage, Service Worker, REST APIs</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="case-content container">
+        <div class="case-section">
+            <h2>O Desafio</h2>
+            <p>
+                Equipes de vendas B2B e SDRs passam horas buscando leads em sites e depois copiando e colando essas informações manualmente no WhatsApp Web para iniciar conversas. A falta de controle no fluxo de conversações e o esquecimento de follow-ups resultam em leads frios e perda significativa de oportunidades comerciais. O desafio era criar uma ferramenta leve que agilizasse a captação e organizasse os contatos diretamente na interface que o vendedor mais usa.
+            </p>
+        </div>
+
+        <div class="case-section">
+            <h2>A Solução</h2>
+            <p>
+                Desenvolvi uma extensão nativa para Google Chrome (Manifest V3) que atua como um CRM integrado diretamente no WhatsApp Web, permitindo gerenciar leads e coletar novos contatos com apenas um clique.
+            </p>
+            <ul style="color: var(--text-muted); font-size: 1.1rem; line-height: 2; margin-left: 1.5rem;">
+                <li><strong>Injeção de Interface (CRM):</strong> Um painel lateral de Kanban, botões de tags e campos de notas injetados na tela do WhatsApp Web sem quebrar o layout original do chat.</li>
+                <li><strong>Scraper de Leads:</strong> Injeção de scripts inteligentes em diretórios e guias empresariais para coletar automaticamente nome da empresa, telefone e URL da página.</li>
+                <li><strong>Processamento Assíncrono:</strong> Service Worker (`background.js`) que gerencia a comunicação e o roteamento de dados entre os content scripts de prospecção e o WhatsApp.</li>
+                <li><strong>Sincronização Híbrida:</strong> Persistência local robusta via `chrome.storage.local` com sincronização automática para o banco PostgreSQL de um backend Django REST quando conectado.</li>
+            </ul>
+        </div>
+
+        <div class="case-section">
+            <h2>Arquitetura & Mensageria</h2>
+            <p>Funcionamento interno baseado nas diretrizes modernas do ecossistema de extensões do Google:</p>
+            <div class="arch-box">
+                // Manifest V3 Extension <br>
+                Content Scripts: `content/whatsapp/injector.js` monitora o DOM e injeta a UI de tags e funil. <br>
+                Scraper Script: `content/prospector/scraper.js` identifica dados de contato no DOM de páginas web externas. <br>
+                Background Worker: `background.js` centraliza o recebimento de mensagens e faz chamadas fetch autenticadas via JWT para a API. <br>
+                Storage API: Cache local resiliente que impede perda de contatos caso o servidor de sincronização esteja indisponível.
+            </div>
+        </div>
+
+        <div class="case-section" style="text-align: center; background: var(--bg-surface); padding: 4rem; border-radius: 30px;">
+            <h2>O Resultado</h2>
+            <p style="font-size: 1.5rem; color: #fff;">"Agilidade e centralização do fluxo de trabalho de SDRs, reduzindo em até 70% o tempo gasto entre a busca do contato e o primeiro envio de mensagem no WhatsApp."</p>
+            <a href="../index.html#contact" class="btn btn-primary" style="margin-top: 2rem;">Construa sua Extensão com a GSTek</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 João Matos | Engenharia de Software Corporativo.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

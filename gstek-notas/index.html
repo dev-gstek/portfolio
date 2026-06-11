@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GSTek Notas | Case Study - Plataforma SaaS de Faturamento</title>
+    <meta name="description"
+        content="Como desenvolvi o GSTek Notas, uma plataforma SaaS Multi-Tenant com Django para gestão de faturamento e automação de Notas Fiscais e Boletos.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .case-header { padding: 100px 0 60px; text-align: center; }
+        .case-content { max-width: 900px; margin: 0 auto; padding-bottom: 100px; }
+        .case-section { margin-bottom: 4rem; }
+        .case-meta { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; background: var(--bg-surface); padding: 2rem; border-radius: 20px; border: 1px solid var(--border-color); margin-top: 3rem; }
+        .case-meta h4 { color: var(--primary-color); font-size: 0.8rem; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .case-meta p { font-weight: 600; }
+        h2 { margin-bottom: 1.5rem; font-family: 'Outfit', sans-serif; }
+        p { font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.2rem; }
+        .arch-box { background: #0a0a0c; padding: 2rem; border-radius: 15px; border-left: 4px solid var(--primary-color); font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container nav">
+            <a href="../index.html" class="logo">JOÃO<span>MATOS</span></a>
+            <div class="nav-links">
+                <a href="../index.html#projects">Voltar aos Projetos</a>
+            </div>
+            <a href="../index.html#contact" class="btn btn-primary" style="padding: 0.8rem 1.6rem; font-size: 0.85rem;">Contratar</a>
+        </div>
+    </header>
+
+    <section class="case-header">
+        <div class="container">
+            <span class="badge">Case Study: SaaS & Financeiro</span>
+            <h1>GSTek Notas: Automação & <span class="gradient-text">Faturamento Multi-Tenant</span></h1>
+            
+            <div class="case-meta">
+                <div>
+                    <h4>Setor</h4>
+                    <p>SaaS / ERP / Faturamento</p>
+                </div>
+                <div>
+                    <h4>Minha Atuação</h4>
+                    <p>Arquitetura, Banco de Dados & Backend</p>
+                </div>
+                <div>
+                    <h4>Stack Técnica</h4>
+                    <p>Django 6.x, PostgreSQL, SMTP, Docker</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="case-content container">
+        <div class="case-section">
+            <h2>O Desafio</h2>
+            <p>
+                Prestadores de serviços perdem tempo operacional relevante emitindo e enviando cobranças, faturas, recibos e notas fiscais manualmente. Além disso, softwares genéricos de faturamento são caros e raramente oferecem isolamento de dados e personalização de remetente (SMTP) de e-mail por inquilino. O desafio era construir um ecossistema SaaS robusto onde cada empresa pudesse gerenciar clientes, anexar notas fiscais emitidas, e realizar disparos automáticos utilizando seu próprio domínio de e-mail institucional para preservar a identidade da marca.
+            </p>
+        </div>
+
+        <div class="case-section">
+            <h2>A Solução</h2>
+            <p>
+                Desenvolvi o **GSTek Notas**, uma plataforma SaaS Multi-Tenant isolada logicamente. O sistema permite que dezenas de empresas gerenciem seus contratos e automatizem o faturamento mensal de forma independente e com restrição de limites baseados em planos de assinatura.
+            </p>
+            <ul style="color: var(--text-muted); font-size: 1.1rem; line-height: 2; margin-left: 1.5rem;">
+                <li><strong>Isolamento Multi-Tenant:</strong> Arquitetura de dados fundamentada em chave estrangeira (`Company`), garantindo que todos os dados operacionais sejam restritos ao inquilino correto.</li>
+                <li><strong>Middleware de Onboarding:</strong> O `CompanyMiddleware` bloqueia o acesso à plataforma e exige a configuração das credenciais SMTP válidas do inquilino logo após o cadastro, evitando falhas de comunicação ou uso indevido de recursos globais.</li>
+                <li><strong>Motor de SMTP Dinâmico:</strong> Backend de envio que lê as chaves criptografadas de SMTP de cada inquilino e despacha e-mails diretamente pela infraestrutura de e-mail própria daquela empresa, preservando o remetente oficial.</li>
+                <li><strong>Processamento de Faturamento Batch:</strong> Scripts periódicos executados via Cron (`faturamento_automatico`) que realizam o fechamento mensal e calculam taxas e cobranças de forma idempotente no dia 01 de cada mês.</li>
+                <li><strong>Controle de Tiers (Limites):</strong> Tabela de planos com travas para volume máximo de notas criadas no mês e número de clientes ativos.</li>
+            </ul>
+        </div>
+
+        <div class="case-section">
+            <h2>Estrutura & Segurança</h2>
+            <p>Principais detalhes de arquitetura técnica da plataforma:</p>
+            <div class="arch-box">
+                // Django SaaS Engine <br>
+                Core: Django 6.x com PostgreSQL para dados relacionais otimizados. <br>
+                Middleware: Interceptador de requisições autenticadas para validação e definição do inquilino em nível de escopo. <br>
+                Mailing Engine: Sobrescrita do backend de email nativo do Django para instanciamento dinâmico de conexões SMTP baseadas nos metadados do banco. <br>
+                Deploy: Containerização total via Docker para facilitar o provisionamento de instâncias de desenvolvimento e produção.
+            </div>
+        </div>
+
+        <div class="case-section" style="text-align: center; background: var(--bg-surface); padding: 4rem; border-radius: 30px;">
+            <h2>O Resultado</h2>
+            <p style="font-size: 1.5rem; color: #fff;">"Uma plataforma de faturamento escalável de baixo custo operacional que automatizou o disparo mensal de faturas para mais de 95% dos clientes cadastrados pelas empresas inquilinas."</p>
+            <a href="../index.html#contact" class="btn btn-primary" style="margin-top: 2rem;">Desenvolva sua Plataforma com a GSTek</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 João Matos | Engenharia de Software Corporativo.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
