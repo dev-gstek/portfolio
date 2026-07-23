@@ -217,6 +217,31 @@ class Transaction(models.Model):
     account = models.ForeignKey(Account, on_delete=models.CASCADE)
     amount = models.DecimalField(max_digits=15, decimal_places=2)
     is_confirmed = models.BooleanField(default=True)`
+    },
+
+    legaltech_ia: {
+        title: "LegalTech IA Generativa",
+        description: "Backend voltado para o mercado jurídico, capaz de gerar contratos automaticamente e revisar cláusulas utilizando inteligência artificial generativa. Focado em produtividade para escritórios de advocacia.",
+        features: [
+            "Geração de contratos complexos utilizando prompts dinâmicos",
+            "Revisão e extração de cláusulas de PDFs carregados",
+            "Integração nativa com LLMs (OpenAI/Anthropic)",
+            "Endpoint seguro via REST API (JWT)",
+            "Modelagem orientada a domínios (DDD)"
+        ],
+        stack: ["Django 5.x", "Django REST Framework", "OpenAI API", "PostgreSQL", "Generative AI"],
+        code: `class ContractGenerationService:
+    def __init__(self, client_data, contract_type):
+        self.client_data = client_data
+        self.contract_type = contract_type
+
+    def generate_draft(self):
+        prompt = f"Gere um contrato de {self.contract_type} para as seguintes partes: {self.client_data}. Siga as leis brasileiras."
+        response = openai.ChatCompletion.create(
+            model="gpt-4",
+            messages=[{"role": "user", "content": prompt}]
+        )
+        return response.choices[0].message.content`
     }
 };
 
@@ -226,44 +251,53 @@ function openModal(id) {
     const body = document.getElementById('modalBody');
 
     body.innerHTML = `
-        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">${project.title}</h2>
+        <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem; color: var(--text-primary); font-family: var(--font-heading);">${project.title}</h2>
         <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem;">
-            ${project.stack.map(s => `<span class="tag" style="background: rgba(14, 165, 233, 0.1); color: var(--primary); border-color: var(--primary);">${s}</span>`).join('')}
+            ${project.stack.map(s => `<span class="tag" style="background: rgba(14, 165, 233, 0.1); color: var(--primary); border-color: rgba(14, 165, 233, 0.3);">${s}</span>`).join('')}
         </div>
         
-        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem;">${project.description}</p>
+        <p style="font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 2rem; line-height: 1.8;">${project.description}</p>
         
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 3rem;">
             <div>
-                <h4 style="margin-bottom: 1rem; color: var(--text-primary);"><i class="fas fa-star" style="color: var(--primary);"></i> Funcionalidades Chave</h4>
+                <h4 style="margin-bottom: 1.5rem; color: var(--text-primary); font-family: var(--font-heading); font-size: 1.2rem;"><i class="fas fa-star" style="color: var(--primary);"></i> Funcionalidades Chave</h4>
                 <ul style="list-style: none; color: var(--text-secondary);">
-                    ${project.features.map(f => `<li style="margin-bottom: 0.8rem; display: flex; align-items: start; gap: 0.75rem;"><i class="fas fa-check" style="color: var(--accent); margin-top: 0.3rem;"></i> ${f}</li>`).join('')}
+                    ${project.features.map(f => `<li style="margin-bottom: 1rem; display: flex; align-items: start; gap: 0.75rem;"><i class="fas fa-check" style="color: var(--accent); margin-top: 0.3rem;"></i> ${f}</li>`).join('')}
                 </ul>
             </div>
             <div>
-                <h4 style="margin-bottom: 1rem; color: var(--text-primary);"><i class="fas fa-code" style="color: var(--primary);"></i> Trecho do Modelo (Django)</h4>
+                <h4 style="margin-bottom: 1.5rem; color: var(--text-primary); font-family: var(--font-heading); font-size: 1.2rem;"><i class="fas fa-code" style="color: var(--primary);"></i> Trecho do Modelo (Django)</h4>
                 <div class="code-window" style="display: block; margin-top: 0;">
                     <div class="code-header">
                         <div class="dot red"></div>
                         <div class="dot yellow"></div>
                         <div class="dot green"></div>
-                        <span style="font-size: 0.7rem; color: var(--text-secondary); margin-left: 1rem;">models.py</span>
+                        <span style="font-size: 0.75rem; color: var(--text-secondary); margin-left: 1rem; font-family: 'Inter', sans-serif;">models.py</span>
                     </div>
                     <pre class="code-content"><code>${project.code}</code></pre>
                 </div>
-                <p style="font-size: 0.8rem; color: var(--text-secondary); margin-top: 1rem; font-style: italic;">* Código simplificado para fins de demonstração.</p>
+                <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 1rem; font-style: italic;">* Código simplificado para fins de demonstração.</p>
             </div>
         </div>
     `;
 
     modal.style.display = 'flex';
+    // Use timeout to allow display:flex to apply before adding the opacity class for transition
+    setTimeout(() => {
+        modal.classList.add('show');
+    }, 10);
     document.body.style.overflow = 'hidden';
 }
 
 function closeModal() {
     const modal = document.getElementById('projectModal');
-    modal.style.display = 'none';
-    document.body.style.overflow = 'auto';
+    modal.classList.remove('show');
+    
+    // Wait for transition to finish
+    setTimeout(() => {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }, 300);
 }
 
 // Close on background click
@@ -274,19 +308,46 @@ window.onclick = function(event) {
     }
 }
 
-// Simple reveal animation
+// Advanced reveal animation
 const observerOptions = {
-    threshold: 0.1
+    threshold: 0.1,
+    rootMargin: "0px 0px -50px 0px"
 };
 
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.classList.add('animate');
+            entry.target.classList.add('show');
+            // Optional: unobserve if we only want to animate once
+            // observer.unobserve(entry.target);
         }
     });
 }, observerOptions);
 
-document.querySelectorAll('.project-card, .skill-card, .section-header').forEach(el => {
+// Initialize static elements
+document.querySelectorAll('.animate').forEach((el) => {
+    // For hero elements already in viewport
+    setTimeout(() => {
+        el.classList.add('show');
+    }, 100);
+});
+
+// Setup grid elements for staggered animation
+const projectCards = document.querySelectorAll('.project-card');
+projectCards.forEach((el, index) => {
+    el.classList.add('animate');
+    el.style.transitionDelay = `${(index % 3) * 0.15}s`;
+    observer.observe(el);
+});
+
+const skillCards = document.querySelectorAll('.skill-card');
+skillCards.forEach((el, index) => {
+    el.classList.add('animate');
+    el.style.transitionDelay = `${(index % 6) * 0.1}s`;
+    observer.observe(el);
+});
+
+document.querySelectorAll('.section-header').forEach(el => {
+    el.classList.add('animate');
     observer.observe(el);
 });

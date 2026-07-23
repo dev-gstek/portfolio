@@ -7,20 +7,23 @@
     <title>João Matos | Arquiteto de Sistemas Django & Automação Empresarial</title>
     <meta name="description"
         content="Desenvolvimento de sistemas ERP personalizados, plataformas SaaS e automação empresarial com Django, Python e PostgreSQL. Soluções escaláveis sob medida.">
-    <meta name="keywords" content="sistema ERP personalizado, automação empresarial, desenvolvimento Django, software sob medida, sistema de gestão, plataforma SaaS, João Matos, GSTek">
+    <meta name="keywords"
+        content="sistema ERP personalizado, automação empresarial, desenvolvimento Django, software sob medida, sistema de gestão, plataforma SaaS, João Matos, GSTek">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://portfolio.gstek.com.br/">
     <meta property="og:title" content="João Matos | Sistemas SaaS & Automação Empresarial">
-    <meta property="og:description" content="Especialista em Django, PostgreSQL, Docker e Linux. Desenvolvimento de sistemas corporativos escaláveis.">
+    <meta property="og:description"
+        content="Especialista em Django, PostgreSQL, Docker e Linux. Desenvolvimento de sistemas corporativos escaláveis.">
     <meta property="og:image" content="https://portfolio.gstek.com.br/assets/banner.png">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://portfolio.gstek.com.br/">
     <meta property="twitter:title" content="João Matos | Sistemas SaaS & Automação Empresarial">
-    <meta property="twitter:description" content="Especialista em Django, PostgreSQL, Docker e Linux. Desenvolvimento de sistemas corporativos escaláveis.">
+    <meta property="twitter:description"
+        content="Especialista em Django, PostgreSQL, Docker e Linux. Desenvolvimento de sistemas corporativos escaláveis.">
     <meta property="twitter:image" content="https://portfolio.gstek.com.br/assets/banner.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,16 +47,20 @@
                 <a href="curriculo.html">Currículo</a>
                 <a href="#contact">Contato</a>
             </div>
-            <a href="#contact" class="btn btn-primary" style="padding: 0.8rem 1.6rem; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">Contratar</a>
+            <a href="#contact" class="btn btn-primary"
+                style="padding: 0.8rem 1.6rem; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">Contratar</a>
         </div>
     </header>
 
     <section class="hero">
         <div class="container hero-content">
             <span class="badge animate">Disponível para Consultoria & Desenvolvimento</span>
-            <h1 class="animate" style="animation-delay: 0.1s;">Especialista em <span class="gradient-text">Sistemas Corporativos</span> & Automação Empresarial.</h1>
-            <p class="animate" style="animation-delay: 0.2s;">Desenvolvo ERPs personalizados, plataformas SaaS e soluções que eliminam o retrabalho. Foco total em redução de custos, controle operacional e escalabilidade com Django & Linux.</p>
-            <div class="hero-btns animate" style="animation-delay: 0.3s;">
+            <h1 class="animate" style="transition-delay: 0.1s;">Especialista em <span class="gradient-text">Sistemas
+                    Corporativos</span> & Automação Empresarial.</h1>
+            <p class="animate" style="transition-delay: 0.2s;">Desenvolvo ERPs personalizados, plataformas SaaS e
+                soluções que eliminam o retrabalho. Foco total em redução de custos, controle operacional e
+                escalabilidade com Django & Linux.</p>
+            <div class="hero-btns animate" style="transition-delay: 0.3s;">
                 <a href="#projects" class="btn btn-primary">
                     <i class="fas fa-code-branch"></i> Ver Projetos
                 </a>
@@ -79,7 +86,7 @@
             <div class="projects-grid">
                 <!-- Promobot SaaS -->
                 <article class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #059669, #0284c7);"></div>
+                    <div class="project-img" style="background-image: url('assets/promobot_bg.png');"></div>
                     <div class="project-body">
                         <div class="project-tags">
                             <span class="tag">SaaS</span>
@@ -87,20 +94,22 @@
                             <span class="tag">Automação</span>
                         </div>
                         <h3>Promobot SaaS</h3>
-                        <p>Automação inteligente de ofertas. Captura, converte e envia links de afiliado automaticamente para múltiplos grupos de WhatsApp via Evolution API e HTMX.</p>
-                        <div class="project-stack" style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--primary-color); margin-top: 1rem; opacity: 0.8;">
+                        <p>Automação inteligente de ofertas. Captura, converte e envia links de afiliado automaticamente
+                            para múltiplos grupos de WhatsApp via Evolution API e HTMX.</p>
+                        <div class="project-stack"
+                            style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--primary-color); margin-top: 1rem; opacity: 0.8;">
                             Django • Evolution API • HTMX • PostgreSQL • Docker
                         </div>
                         <div class="project-actions">
-                            <a href="promobot/" class="btn-detail" style="text-decoration: none;">Ver Detalhes <i
-                                    class="fas fa-arrow-right"></i></a>
+                            <button onclick="openModal('promobot')" class="btn-detail">Ver Detalhes <i
+                                    class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </article>
 
                 <!-- WhatsApp CRM Pro -->
                 <article class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #0d9488, #0f766e);"></div>
+                    <div class="project-img" style="background-image: url('assets/crm_extension_bg.png');"></div>
                     <div class="project-body">
                         <div class="project-tags">
                             <span class="tag">Extension</span>
@@ -108,20 +117,22 @@
                             <span class="tag">WhatsApp API</span>
                         </div>
                         <h3>WhatsApp CRM Pro</h3>
-                        <p>CRM e Prospecção B2B integrado ao WhatsApp Web. Extraia contatos de sites empresariais (scrapers) e gerencie o funil de vendas (Kanban) sem sair do chat.</p>
-                        <div class="project-stack" style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--primary-color); margin-top: 1rem; opacity: 0.8;">
+                        <p>CRM e Prospecção B2B integrado ao WhatsApp Web. Extraia contatos de sites empresariais
+                            (scrapers) e gerencie o funil de vendas (Kanban) sem sair do chat.</p>
+                        <div class="project-stack"
+                            style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--primary-color); margin-top: 1rem; opacity: 0.8;">
                             JS (Extension V3) • Chrome Storage API • REST APIs
                         </div>
                         <div class="project-actions">
-                            <a href="chrome-extension/" class="btn-detail" style="text-decoration: none;">Ver Detalhes <i
-                                    class="fas fa-arrow-right"></i></a>
+                            <button onclick="openModal('chrome_extension')" class="btn-detail">Ver Detalhes <i
+                                    class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </article>
 
                 <!-- GSTek Notas -->
                 <article class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #4f46e5, #7c3aed);"></div>
+                    <div class="project-img" style="background-image: url('assets/gstek_notas_bg.png');"></div>
                     <div class="project-body">
                         <div class="project-tags">
                             <span class="tag">SaaS</span>
@@ -130,13 +141,15 @@
                             <span class="tag">Multi-tenant</span>
                         </div>
                         <h3>GSTek Notas</h3>
-                        <p>Plataforma SaaS Multi-Tenant para gestão de faturamento. Automatiza a emissão de notas fiscais e boletos e o envio por e-mail via SMTP próprio de cada inquilino.</p>
-                        <div class="project-stack" style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--primary-color); margin-top: 1rem; opacity: 0.8;">
+                        <p>Plataforma SaaS Multi-Tenant para gestão de faturamento. Automatiza a emissão de notas
+                            fiscais e boletos e o envio por e-mail via SMTP próprio de cada inquilino.</p>
+                        <div class="project-stack"
+                            style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--primary-color); margin-top: 1rem; opacity: 0.8;">
                             Django • PostgreSQL • SMTP • Docker
                         </div>
                         <div class="project-actions">
-                            <a href="gstek-notas/" class="btn-detail" style="text-decoration: none;">Ver Detalhes <i
-                                    class="fas fa-arrow-right"></i></a>
+                            <button onclick="openModal('gstek_notas')" class="btn-detail">Ver Detalhes <i
+                                    class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </article>
@@ -151,20 +164,22 @@
                             <span class="tag">Multi-tenant</span>
                         </div>
                         <h3>Nexus IT</h3>
-                        <p>Controle operacional absoluto para MSPs. Automatiza o monitoramento de ativos, telemetria em tempo real e o faturamento complexo de serviços de TI.</p>
-                        <div class="project-stack" style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--primary-color); margin-top: 1rem; opacity: 0.8;">
+                        <p>Controle operacional absoluto para MSPs. Automatiza o monitoramento de ativos, telemetria em
+                            tempo real e o faturamento complexo de serviços de TI.</p>
+                        <div class="project-stack"
+                            style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--primary-color); margin-top: 1rem; opacity: 0.8;">
                             Django • PostgreSQL • Redis • Docker • Nginx
                         </div>
                         <div class="project-actions">
-                            <a href="nexus-it/" class="btn-detail" style="text-decoration: none;">Ver Detalhes <i
-                                    class="fas fa-arrow-right"></i></a>
+                            <button onclick="openModal('nexus')" class="btn-detail">Ver Detalhes <i
+                                    class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </article>
 
                 <!-- EventPro -->
                 <article class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #1e1b4b, #312e81);"></div>
+                    <div class="project-img" style="background-image: url('assets/eventpro_bg.png');"></div>
                     <div class="project-body">
                         <div class="project-tags">
                             <span class="tag">SaaS</span>
@@ -172,20 +187,22 @@
                             <span class="tag">Financeiro</span>
                         </div>
                         <h3>EventPro Universal</h3>
-                        <p>Gestão unificada para eventos artísticos. Redução de custos através de reconciliação financeira em tempo real e automação da logística de grandes equipes.</p>
-                        <div class="project-stack" style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--primary-color); margin-top: 1rem; opacity: 0.8;">
+                        <p>Gestão unificada para eventos artísticos. Redução de custos através de reconciliação
+                            financeira em tempo real e automação da logística de grandes equipes.</p>
+                        <div class="project-stack"
+                            style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--primary-color); margin-top: 1rem; opacity: 0.8;">
                             Django • PostgreSQL • Celery • Redis • Linux
                         </div>
                         <div class="project-actions">
-                            <a href="eventpro/" class="btn-detail" style="text-decoration: none;">Ver Detalhes <i
-                                    class="fas fa-arrow-right"></i></a>
+                            <button onclick="openModal('eventpro')" class="btn-detail">Ver Detalhes <i
+                                    class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </article>
 
                 <!-- GSTeacher -->
                 <article class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #064e3b, #065f46);"></div>
+                    <div class="project-img" style="background-image: url('assets/gsteacher_bg.png');"></div>
                     <div class="project-body">
                         <div class="project-tags">
                             <span class="tag">AI/ML</span>
@@ -196,8 +213,8 @@
                         <p>Plataforma de coaching de idiomas com IA. Analisa pronúncia, fluência e gramática em tempo
                             real.</p>
                         <div class="project-actions">
-                            <a href="gsteacher-ai/" class="btn-detail" style="text-decoration: none;">Ver Detalhes <i
-                                    class="fas fa-arrow-right"></i></a>
+                            <button onclick="openModal('gsteacher')" class="btn-detail">Ver Detalhes <i
+                                    class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </article>
@@ -212,20 +229,22 @@
                             <span class="tag">Real-time</span>
                         </div>
                         <h3>Last Mile Delivery</h3>
-                        <p>Otimização logística e rastreabilidade total. Sistema de roteirização inteligente que reduz custos de frete e oferece geofencing em tempo real.</p>
-                        <div class="project-stack" style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--primary-color); margin-top: 1rem; opacity: 0.8;">
+                        <p>Otimização logística e rastreabilidade total. Sistema de roteirização inteligente que reduz
+                            custos de frete e oferece geofencing em tempo real.</p>
+                        <div class="project-stack"
+                            style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--primary-color); margin-top: 1rem; opacity: 0.8;">
                             Django • PostGIS • Docker • Real-time APIs
                         </div>
                         <div class="project-actions">
-                            <a href="last-mile/" class="btn-detail" style="text-decoration: none;">Ver Detalhes <i
-                                    class="fas fa-arrow-right"></i></a>
+                            <button onclick="openModal('lastmile')" class="btn-detail">Ver Detalhes <i
+                                    class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </article>
 
                 <!-- Agendaê -->
                 <article class="project-card">
-                    <div class="project-img" style="background: linear-gradient(135deg, #7c2d12, #451a03);"></div>
+                    <div class="project-img" style="background-image: url('assets/agendae_bg.png');"></div>
                     <div class="project-body">
                         <div class="project-tags">
                             <span class="tag">SaaS</span>
@@ -233,10 +252,11 @@
                             <span class="tag">Payments</span>
                         </div>
                         <h3>Agendaê</h3>
-                        <p>Automação de agendamentos e faturamento. Plataforma SaaS que elimina o retrabalho de marcação e integra o fluxo de caixa diretamente ao checkout.</p>
+                        <p>Automação de agendamentos e faturamento. Plataforma SaaS que elimina o retrabalho de marcação
+                            e integra o fluxo de caixa diretamente ao checkout.</p>
                         <div class="project-actions">
-                            <a href="agendae/" class="btn-detail" style="text-decoration: none;">Ver Detalhes <i
-                                    class="fas fa-arrow-right"></i></a>
+                            <button onclick="openModal('agendae')" class="btn-detail">Ver Detalhes <i
+                                    class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </article>
@@ -251,10 +271,30 @@
                             <span class="tag">Vault</span>
                         </div>
                         <h3>MFO Financial</h3>
-                        <p>Segurança e controle de patrimônio. Gestão financeira avançada com cofre criptografado para documentos sensíveis e integração Open Finance.</p>
+                        <p>Segurança e controle de patrimônio. Gestão financeira avançada com cofre criptografado para
+                            documentos sensíveis e integração Open Finance.</p>
                         <div class="project-actions">
-                            <a href="mfo-financial/" class="btn-detail" style="text-decoration: none;">Ver Detalhes <i
-                                    class="fas fa-arrow-right"></i></a>
+                            <button onclick="openModal('finance')" class="btn-detail">Ver Detalhes <i
+                                    class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- LegalTech IA -->
+                <article class="project-card">
+                    <div class="project-img" style="background-image: url('assets/legaltech_bg.png');"></div>
+                    <div class="project-body">
+                        <div class="project-tags">
+                            <span class="tag">IA Generativa</span>
+                            <span class="tag">LegalTech</span>
+                            <span class="tag">API</span>
+                        </div>
+                        <h3>LegalTech IA</h3>
+                        <p>Geração automatizada e revisão inteligente de contratos utilizando modelos LLM (Inteligência
+                            Artificial Generativa) no setor jurídico.</p>
+                        <div class="project-actions">
+                            <button onclick="openModal('legaltech_ia')" class="btn-detail">Ver Detalhes <i
+                                    class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
                 </article>
@@ -264,42 +304,53 @@
 
     <section id="about" class="section">
         <div class="container">
-            <div class="about-wrapper" style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;">
+            <div class="about-wrapper"
+                style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;">
                 <div class="about-text">
                     <span class="badge">Trajetória & Visão</span>
-                    <h2 style="margin-bottom: 1.5rem;">Engenharia de <span class="gradient-text">Software Corporativo</span></h2>
+                    <h2 style="margin-bottom: 1.5rem;">Engenharia de <span class="gradient-text">Software
+                            Corporativo</span></h2>
                     <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.5rem;">
-                        Especialista em transformar processos manuais e requisitos complexos em ecossistemas digitais de alta performance. Com foco em Django, PostgreSQL e infraestrutura Linux, minha entrega é pautada em engenharia de verdade, não apenas código.
+                        Especialista em transformar processos manuais e requisitos complexos em ecossistemas digitais de
+                        alta performance. Com foco em Django, PostgreSQL e infraestrutura Linux, minha entrega é pautada
+                        em engenharia de verdade, não apenas código.
                     </p>
                     <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 2rem;">
-                        Mais do que apenas desenvolver código, meu foco é entregar **valor real para o negócio** através de automação, performance e escalabilidade.
+                        Mais do que apenas desenvolver código, meu foco é entregar **valor real para o negócio** através
+                        de automação, performance e escalabilidade.
                     </p>
 
                     <div class="about-highlights" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
                         <div class="highlight-item">
                             <i class="fas fa-rocket" style="color: var(--primary-color); margin-bottom: 0.5rem;"></i>
                             <h4 style="margin-bottom: 0.3rem;">Arquitetura Escalável</h4>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Modelagem avançada com PostgreSQL e foco em performance.</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Modelagem avançada com PostgreSQL e
+                                foco em performance.</p>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-cog" style="color: var(--primary-color); margin-bottom: 0.5rem;"></i>
                             <h4 style="margin-bottom: 0.3rem;">Automação & Async</h4>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Processamento em background com Celery e Redis.</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Processamento em background com
+                                Celery e Redis.</p>
                         </div>
                         <div class="highlight-item">
-                            <i class="fas fa-shield-alt" style="color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                            <i class="fas fa-shield-alt"
+                                style="color: var(--primary-color); margin-bottom: 0.5rem;"></i>
                             <h4 style="margin-bottom: 0.3rem;">Segurança & Multi-tenant</h4>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Controle de acesso granular e proteção de dados.</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Controle de acesso granular e
+                                proteção de dados.</p>
                         </div>
                         <div class="highlight-item">
                             <i class="fab fa-docker" style="color: var(--primary-color); margin-bottom: 0.5rem;"></i>
                             <h4 style="margin-bottom: 0.3rem;">Infra Moderna</h4>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Deploy seguro com Docker e servidores Linux.</p>
+                            <p style="font-size: 0.9rem; color: var(--text-muted);">Deploy seguro com Docker e
+                                servidores Linux.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="about-card" style="background: var(--bg-surface); padding: 2.5rem; border-radius: 20px; border: 1px solid var(--border-color); position: sticky; top: 100px;">
+                <div class="about-card"
+                    style="background: var(--bg-surface); padding: 2.5rem; border-radius: 20px; border: 1px solid var(--border-color); position: sticky; top: 100px;">
                     <h3 style="margin-bottom: 1.5rem; font-family: 'Outfit', sans-serif;">Stack Principal</h3>
                     <div class="stack-tags" style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
                         <span class="tag">Python</span>
@@ -317,7 +368,8 @@
                     </div>
                     <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border-color);">
                     <p style="font-style: italic; color: var(--text-muted); font-size: 0.95rem;">
-                        "Meu objetivo é desenvolver sistemas que não apenas funcionem, mas que escalem junto com o negócio."
+                        "Meu objetivo é desenvolver sistemas que não apenas funcionem, mas que escalem junto com o
+                        negócio."
                     </p>
                 </div>
             </div>
