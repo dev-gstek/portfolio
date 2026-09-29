@@ -452,6 +452,11 @@
            PRINT RULES: Optimizes for standard A4 paper (light mode)
            ---------------------------------------------------- */
         @media print {
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+
             :root {
                 --primary: #0284c7; /* darker blue for readable printing */
                 --secondary: #4f46e5;
