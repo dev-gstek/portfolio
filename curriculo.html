@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Victor Borba Matos | Currículo Profissional - Engenharia de Software</title>
+    <title>João Victor Borba Matos | Currículo - Arquiteto de Software & Especialista em IA</title>
     <meta name="description"
-        content="Currículo de João Victor Borba Matos. Engenheiro de Software especialista em Django, Python, PostgreSQL, Docker e automação de sistemas corporativos.">
+        content="Currículo de João Victor Borba Matos. Arquiteto de Software e Especialista em Inteligência Artificial. Especialista em Django, Python, PostgreSQL, Docker, SaaS e automação de sistemas corporativos.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -203,8 +203,8 @@
         /* Skills Layout */
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.25rem;
         }
 
         .skill-group h4 {
@@ -510,6 +510,12 @@
                 gap: 10pt !important;
             }
 
+            .cv-name img {
+                width: 42pt !important;
+                height: 42pt !important;
+                border-radius: 6pt !important;
+            }
+
             .cv-name h1 {
                 font-size: 22pt !important;
                 color: #0f172a !important;
@@ -561,7 +567,9 @@
             }
 
             .skills-container {
-                gap: 10pt !important;
+                display: grid !important;
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 8pt !important;
             }
 
             .skill-group h4 {
@@ -689,9 +697,14 @@
             <a href="index.html" class="btn btn-secondary">
                 <i class="fas fa-arrow-left"></i> Voltar ao Portfólio
             </a>
-            <button onclick="window.print()" class="btn btn-primary">
-                <i class="fas fa-print"></i> Imprimir / Salvar PDF
-            </button>
+            <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+                <a href="assets/assinatura_joaomatos.png" download="Cartao_JoaoMatos_GSTek.png" class="btn btn-secondary">
+                    <i class="fas fa-id-card"></i> Cartão Digital
+                </a>
+                <button onclick="window.print()" class="btn btn-primary">
+                    <i class="fas fa-print"></i> Imprimir / Salvar PDF
+                </button>
+            </div>
         </div>
 
         <!-- The actual CV Paper Document -->
@@ -699,9 +712,13 @@
             
             <!-- Header section -->
             <header class="cv-header">
-                <div class="cv-name">
-                    <h1>João Victor Borba Matos</h1>
-                    <div class="cv-title">Engenheiro de Software | Especialista Django & Automação</div>
+                <div class="cv-name" style="display: flex; align-items: center; gap: 1.25rem;">
+                    <img src="assets/logo_gstek.png" alt="GSTek" style="width: 58px; height: 58px; object-fit: contain; border-radius: 12px; box-shadow: 0 4px 14px rgba(14, 165, 233, 0.25);">
+                    <div>
+                        <h1>João Victor Borba Matos</h1>
+                        <div class="cv-title">Arquiteto de Software | Desenvolvedor Full Cycle</div>
+                        <div style="font-size: 0.88rem; color: var(--text-secondary); margin-top: 0.2rem; font-weight: 500;">Sistemas Corporativos • DevOps • Inteligência Artificial</div>
+                    </div>
                 </div>
                 <div class="cv-contact">
                     <div><i class="fas fa-envelope"></i> <a href="mailto:joao.matos@gstek.com.br">joao.matos@gstek.com.br</a></div>
@@ -717,7 +734,7 @@
             <section class="cv-section">
                 <h3 class="cv-section-title"><i class="fas fa-rocket"></i> Perfil Profissional</h3>
                 <div class="cv-profile-text">
-                    Engenheiro de Software com sólida trajetória no desenvolvimento de sistemas corporativos de alta performance, plataformas SaaS multi-tenant e ecossistemas complexos de automação comercial. Especialista em Python (Django e Flask) e modelagem de dados avançada com PostgreSQL, integrando processamento em background de alta disponibilidade com Celery e Redis. Experiência consolidada no ciclo completo de engenharia (Full-cycle), desde a concepção técnica e estruturação de bancos de dados até o deploy automatizado utilizando infraestrutura moderna com Docker e servidores Linux (Nginx). Focado no desenvolvimento de arquiteturas escaláveis, seguras (RBAC, criptografia) e de alto valor de negócio que eliminam o retrabalho e promovem a eficiência operacional de ponta a ponta.
+                    Arquiteto de Software e Engenheiro de Soluções com dupla pós-graduação: <strong>Arquitetura de Software</strong> e <strong>Inteligência Artificial</strong>. Sólida trajetória no desenho e desenvolvimento de sistemas corporativos de alta disponibilidade, plataformas SaaS multi-tenant e ecossistemas complexos de automação comercial e tributária. Especialista no ecossistema Python (Django, FastAPI e Flask) e modelagem relacional de alta performance com PostgreSQL, integrando padrões modernos de engenharia (Clean Architecture, DDD, microsserviços e mensageria distribuída assíncrona com Celery e Redis) a soluções práticas de IA (pipelines de OCR, agentes fiscais anti-malha fina e bots conversacionais). Experiência consolidada em todo o ciclo de software (Full-cycle), da concepção arquitetural e segurança (RBAC, criptografia, isolamento de dados) à infraestrutura moderna em contêineres Docker e servidores Linux (Nginx), garantindo escalabilidade, governança técnica e alto retorno para o negócio.
                 </div>
             </section>
 
@@ -726,20 +743,32 @@
                 <h3 class="cv-section-title"><i class="fas fa-tools"></i> Toolbox & Competências</h3>
                 <div class="skills-container">
                     <div class="skill-group">
-                        <h4>Linguagens & Frameworks</h4>
+                        <h4>Arquitetura & IA</h4>
                         <div class="skill-list">
-                            <span class="skill-badge">Python</span>
-                            <span class="skill-badge">Django MVT / DRF</span>
-                            <span class="skill-badge">Flask & FastAPI</span>
-                            <span class="skill-badge">JavaScript (ES6+)</span>
-                            <span class="skill-badge">TypeScript</span>
-                            <span class="skill-badge">HTMX</span>
-                            <span class="skill-badge">Pytest (TDD)</span>
-                            <span class="skill-badge">Java (OOP)</span>
+                            <span class="skill-badge">Clean Architecture</span>
+                            <span class="skill-badge">DDD & Design Patterns</span>
+                            <span class="skill-badge">Multi-Tenancy</span>
+                            <span class="skill-badge">Pipelines OCR / IA</span>
+                            <span class="skill-badge">LLMs & Prompt Eng.</span>
+                            <span class="skill-badge">Event-Driven</span>
+                            <span class="skill-badge">RBAC & Segurança</span>
                         </div>
                     </div>
                     <div class="skill-group">
-                        <h4>Bancos & Infraestrutura</h4>
+                        <h4>Linguagens & Backend</h4>
+                        <div class="skill-list">
+                            <span class="skill-badge">Python (Avançado)</span>
+                            <span class="skill-badge">Django 6 / DRF</span>
+                            <span class="skill-badge">FastAPI & Uvicorn</span>
+                            <span class="skill-badge">Flask</span>
+                            <span class="skill-badge">Pytest (TDD)</span>
+                            <span class="skill-badge">JavaScript (ES6+)</span>
+                            <span class="skill-badge">TypeScript</span>
+                            <span class="skill-badge">React / HTMX</span>
+                        </div>
+                    </div>
+                    <div class="skill-group">
+                        <h4>Dados & Infraestrutura</h4>
                         <div class="skill-list">
                             <span class="skill-badge">PostgreSQL & PostGIS</span>
                             <span class="skill-badge">Docker & Compose</span>
@@ -747,7 +776,7 @@
                             <span class="skill-badge">Celery & Redis</span>
                             <span class="skill-badge">Active Directory</span>
                             <span class="skill-badge">Git & GitHub Actions</span>
-                            <span class="skill-badge">VPS (AWS / DigitalOcean)</span>
+                            <span class="skill-badge">VPS Cloud</span>
                         </div>
                     </div>
                     <div class="skill-group">
@@ -755,10 +784,10 @@
                         <div class="skill-list">
                             <span class="skill-badge" style="border-color: rgba(16, 185, 129, 0.3); color: var(--accent);">Inglês</span>
                             <span class="skill-badge" style="border-color: rgba(16, 185, 129, 0.3); color: var(--accent);">Espanhol</span>
+                            <span class="skill-badge">Visão Sistêmica</span>
+                            <span class="skill-badge">Liderança Técnica</span>
                             <span class="skill-badge">Trabalho em Equipe</span>
                             <span class="skill-badge">Fácil Adaptação</span>
-                            <span class="skill-badge">Fácil Aprendizado</span>
-                            <span class="skill-badge">Liderança & Gestão</span>
                         </div>
                     </div>
                 </div>
@@ -818,6 +847,27 @@
                 <h3 class="cv-section-title"><i class="fas fa-code-branch"></i> Projetos de Destaque (Freelancer / Portfólio)</h3>
                 <div class="freelance-grid">
                     
+                    <!-- NexoFiscal AI -->
+                    <div class="freelance-card">
+                        <h4>NexoFiscal AI <span class="freelance-tech">AI & Fiscal SaaS</span></h4>
+                        <p>Plataforma SaaS para inteligência tributária e auditoria preventiva anti-malha fina. Pipeline assíncrono de OCR para leitura inteligente de informes bancários e recibos, motor de cálculo determinístico e exportação oficial do arquivo .DEC da Receita Federal em 1 clique.</p>
+                        <div class="freelance-tech">Django 6.0 • Celery • OCR / IA • PostgreSQL • Pytest (100% testes) • Docker</div>
+                    </div>
+
+                    <!-- OmniFlow ERP -->
+                    <div class="freelance-card">
+                        <h4>OmniFlow ERP <span class="freelance-tech">Omnichannel & DRE</span></h4>
+                        <p>Plataforma corporativa de gestão unificada e hub omnichannel integrada via APIs oficiais a Mercado Livre, Shopee e Nuvemshop. Baixa atômica de estoque multicanal evitando over-selling e motor de DRE com lucro líquido real por pedido.</p>
+                        <div class="freelance-tech">Python 3.12 • Django REST • React 18 / Vite • PostgreSQL • Celery & Redis</div>
+                    </div>
+
+                    <!-- ZapVendas SaaS -->
+                    <div class="freelance-card">
+                        <h4>ZapVendas SaaS <span class="freelance-tech">Conversational SaaS</span></h4>
+                        <p>SaaS multi-lojista de conversão e live commerce no WhatsApp. Escuta webhooks de chats/grupos, processa compras instantâneas sob gatilho ('EU QUERO') com trava de estoque em tempo real e geração automática de cobrança Pix no privado.</p>
+                        <div class="freelance-tech">FastAPI • Python • Evolution API (WhatsApp) • PostgreSQL • Docker</div>
+                    </div>
+
                     <!-- Nexus IT -->
                     <div class="freelance-card">
                         <h4>Nexus IT <span class="freelance-tech">ERP & RMM</span></h4>
@@ -877,9 +927,19 @@
                 
                 <!-- Education -->
                 <section class="cv-section">
-                    <h3 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Formação</h3>
+                    <h3 class="cv-section-title"><i class="fas fa-graduation-cap"></i> Formação Acadêmica</h3>
+                    <div class="edu-item" style="margin-bottom: 1rem;">
+                        <h4>Pós-Graduação em Arquitetura de Software</h4>
+                        <div class="edu-school">Especialização Concluída</div>
+                        <div class="edu-date">2026</div>
+                    </div>
+                    <div class="edu-item" style="margin-bottom: 1rem;">
+                        <h4>Pós-Graduação em Inteligência Artificial</h4>
+                        <div class="edu-school">Especialização Concluída</div>
+                        <div class="edu-date">2026</div>
+                    </div>
                     <div class="edu-item">
-                        <h4>Análise e Desenvolvimento de Sistemas</h4>
+                        <h4>Graduação em Análise e Desenvolvimento de Sistemas</h4>
                         <div class="edu-school">UNIGOIAS, Goiânia - GO</div>
                         <div class="edu-date">Junho 2021 - Dezembro 2023</div>
                     </div>

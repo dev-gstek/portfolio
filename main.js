@@ -1,4 +1,86 @@
 const projects = {
+    nexofiscal: {
+        title: "NexoFiscal AI - Contador Digital & Plataforma Tributária",
+        description: "Plataforma SaaS voltada para inteligência tributária, auditoria preventiva anti-malha fina e facilitação da declaração de IRPF para contribuintes e contadores. Une pipeline assíncrono de OCR para leitura inteligente de informes bancários e recibos a um motor tributário determinístico com precisão decimal, gerando o arquivo posicional oficial .DEC da Receita Federal para importação em 1 clique.",
+        features: [
+            "Motor tributário determinístico com precisão decimal (tabela progressiva, PGBL 12%, deduções legais vs simplificado)",
+            "Pipeline assíncrono de OCR e parser inteligente para informes de rendimentos bancários e recibos médicos",
+            "Agente Auditor Preventivo Anti-Malha Fina com análise de variação patrimonial a descoberto",
+            "Exportador oficial do arquivo .DEC (Registros R01 a R20 com checksum MD5) da Receita Federal",
+            "Wizard adaptativo de entrevista em linguagem natural acessível para leigos",
+            "100% de cobertura de testes unitários no motor de cálculo com Pytest"
+        ],
+        stack: ["Django 6.0", "Python 3.12", "Celery & Redis", "PostgreSQL", "Docker", "Pytest", "OCR / LLM Pipeline"],
+        code: `class TaxEngine:
+    """Motor Tributário Determinístico com Precisão Decimal (Anti-Alucinação)"""
+    def __init__(self, declaracao: DeclaracaoIRPF):
+        self.dec = declaracao
+        
+    def calcular_resultado(self) -> ResultadoTributario:
+        renda_tributavel = self.dec.somar_rendimentos_tributaveis()
+        deducoes = self.dec.calcular_deducoes_legais()
+        base_calculo = max(Decimal("0.00"), renda_tributavel - deducoes)
+        
+        imposto_devido = self._aplicar_tabela_progressiva(base_calculo)
+        imposto_retido = self.dec.somar_imposto_retido_fonte()
+        saldo = imposto_devido - imposto_retido
+        
+        # Auditoria de variação patrimonial a descoberto
+        self._auditar_consistencia_patrimonial()`
+    },
+    omniflow: {
+        title: "OmniFlow ERP - Hub Omnichannel & Motor Financeiro DRE",
+        description: "Plataforma corporativa de gestão omnichannel de alta performance desenvolvida sob medida para centralizar a operação comercial, logística e contábil em múltiplos marketplaces e canais diretos (Mercado Livre, Shopee, Nuvemshop e Vendas WhatsApp/Balcão). Elimina over-selling através de sincronização atômica de estoque e calcula a DRE pedido a pedido em tempo real.",
+        features: [
+            "Sincronização bidirecional em tempo real de pedidos e estoque com Mercado Livre, Shopee e Nuvemshop",
+            "Baixa atômica e simultânea de estoque em todos os canais para evitar rupturas e over-selling",
+            "Motor financeiro DRE pedido a pedido: cálculo automático de comissões, frete seller, custos e margem líquida real",
+            "Integração oficial OAuth 2.0 com renovação automática de refresh token e escuta de Webhooks",
+            "Módulo de ponto de venda e pedidos manuais com baixa instantânea e conciliação de caixa",
+            "Fila assíncrona com Celery e Redis para orquestração de robôs de sincronização sem travar a interface"
+        ],
+        stack: ["Python 3.12", "Django REST Framework", "React 18 / Vite", "PostgreSQL 15", "Redis 7 & Celery", "Docker Compose", "Nginx"],
+        code: `class OrderSyncService:
+    @transaction.atomic
+    def process_marketplace_order(self, channel: str, raw_payload: dict):
+        order = self.normalize_order_payload(channel, raw_payload)
+        
+        # Baixa atômica de estoque em múltiplos canais
+        for item in order.items.select_for_update():
+            stock = ProductStock.objects.select_for_update().get(sku=item.sku)
+            stock.decrease(item.quantity)
+            dispatch_multichannel_stock_update.delay(stock.sku, stock.current_balance)
+            
+        # Cálculo determinístico de DRE e Margem Líquida Real
+        dre = DRECalculator(order).compute_net_margin()
+        order.mark_as_synced(dre_id=dre.id)`
+    },
+    zapvendas: {
+        title: "ZapVendas SaaS - Live Commerce & Automação de Vendas WhatsApp",
+        description: "Solução SaaS multi-lojista de alta velocidade para vendas automáticas em grupos e chats do WhatsApp. Conecta-se à Evolution API via Webhooks assíncronos, monitora comandos de intenção de compra instantânea ('EU QUERO') e processa reservas de estoque em tempo real com envio imediato de chave e QR Code Pix dinâmico no privado do cliente.",
+        features: [
+            "Arquitetura Multi-Tenant isolada por lojista (tenants) com gerenciamento individual de instâncias de WhatsApp",
+            "Escuta contínua de Webhooks assíncronos de grupos com baixa latência via FastAPI e Uvicorn",
+            "Gatilho 'Quem chegar primeiro leva': detecção instantânea do comando de compra e trava de estoque em tempo real",
+            "Gerador e despachador dinâmico de cobrança Pix no chat privado com validação de status",
+            "Painel Web administrativo para controle de instâncias, catálogo de produtos, fotos e chave Pix",
+            "Infraestrutura Docker containerizada com PostgreSQL de alta concorrência"
+        ],
+        stack: ["FastAPI", "Python", "Evolution API (WhatsApp)", "PostgreSQL", "Uvicorn", "Webhooks Assíncronos", "Docker"],
+        code: `@app.post("/webhook/whatsapp")
+async def handle_whatsapp_incoming(payload: WebhookPayload, db: AsyncSession = Depends(get_db)):
+    if payload.is_group_message and "EU QUERO" in payload.text.upper():
+        tenant = await get_tenant_by_instance(payload.instance_name, db)
+        item = await reserve_exclusive_product(payload.product_id, payload.sender_phone, db)
+        
+        if item.is_reserved:
+            pix_payload = generate_pix_qr(tenant.pix_key, item.price, item.sku)
+            await send_private_message(
+                phone=payload.sender_phone,
+                message=f"Peça #{item.sku} reservada com sucesso! Pague via Pix para garantir.",
+                qr_code=pix_payload.base64
+            )`
+    },
     promobot: {
         title: "Promobot SaaS",
         description: "Plataforma de automação e disparo automático de ofertas de afiliados em massa para grupos de WhatsApp. O sistema oferece suporte a múltiplos locatários (multi-tenant) e integração simplificada com a Evolution API v2 para gerenciamento dinâmico de instâncias de WhatsApp.",
@@ -266,13 +348,13 @@ function openModal(id) {
                 </ul>
             </div>
             <div>
-                <h4 style="margin-bottom: 1.5rem; color: var(--text-primary); font-family: var(--font-heading); font-size: 1.2rem;"><i class="fas fa-code" style="color: var(--primary);"></i> Trecho do Modelo (Django)</h4>
+                <h4 style="margin-bottom: 1.5rem; color: var(--text-primary); font-family: var(--font-heading); font-size: 1.2rem;"><i class="fas fa-code" style="color: var(--primary);"></i> Trecho Arquitetural / Core</h4>
                 <div class="code-window" style="display: block; margin-top: 0;">
                     <div class="code-header">
                         <div class="dot red"></div>
                         <div class="dot yellow"></div>
                         <div class="dot green"></div>
-                        <span style="font-size: 0.75rem; color: var(--text-secondary); margin-left: 1rem; font-family: 'Inter', sans-serif;">models.py</span>
+                        <span style="font-size: 0.75rem; color: var(--text-secondary); margin-left: 1rem; font-family: 'Inter', sans-serif;">architecture_core.py</span>
                     </div>
                     <pre class="code-content"><code>${project.code}</code></pre>
                 </div>
