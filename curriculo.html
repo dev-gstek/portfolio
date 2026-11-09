@@ -37,12 +37,18 @@
             box-sizing: border-box;
         }
 
+        html, body {
+            overflow-x: hidden;
+            width: 100%;
+        }
+
         body {
             background-color: var(--bg-dark);
             color: var(--text-primary);
             font-family: var(--font-body);
             line-height: 1.6;
             padding: 3rem 0;
+            -webkit-text-size-adjust: 100%;
         }
 
         .container {
@@ -421,6 +427,9 @@
             body {
                 padding: 1.5rem 0;
             }
+            .container {
+                padding: 0 1.25rem;
+            }
             .cv-paper {
                 padding: 2rem;
             }
@@ -445,6 +454,28 @@
             }
             .cv-name h1 {
                 font-size: 2.2rem;
+                word-break: break-word;
+            }
+        }
+
+        @media screen and (max-width: 540px) {
+            .container {
+                padding: 0 1rem;
+            }
+            .cv-paper {
+                padding: 1.25rem;
+                border-radius: 16px;
+            }
+            .cv-actions {
+                flex-direction: column;
+                gap: 0.75rem;
+            }
+            .cv-actions .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .cv-name h1 {
+                font-size: 1.75rem;
             }
         }
 

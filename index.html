@@ -38,26 +38,35 @@
 <body>
 
     <header>
-        <div class="container nav">
-            <a href="#" class="logo">
-                <img src="assets/logo_gstek.png" alt="GSTek Logo" class="logo-img">
-                JOÃO<span>MATOS</span>
+        <div class="container nav-container">
+            <a href="#" class="brand-logo" aria-label="GSTek">
+                <img src="assets/logo_gstek.png" alt="GSTek" class="navbar-logo">
             </a>
-            <div class="nav-links">
+            <nav class="nav-links" id="navLinks">
                 <a href="#projects">Projetos</a>
                 <a href="#skills">Toolbox</a>
                 <a href="#about">Sobre & Formação</a>
                 <a href="curriculo.html">Currículo</a>
                 <a href="#contact">Contato</a>
+                <div class="mobile-cta">
+                    <a href="#contact" class="btn btn-primary">Contratar</a>
+                </div>
+            </nav>
+            <div class="nav-actions">
+                <a href="#contact" class="btn btn-primary nav-cta">Contratar</a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Menu de navegação" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-            <a href="#contact" class="btn btn-primary"
-                style="padding: 0.8rem 1.6rem; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">Contratar</a>
         </div>
     </header>
 
     <section class="hero">
         <div class="container hero-content">
-            <span class="badge animate"><i class="fas fa-certificate"></i> Pós-Graduado em Arquitetura de Software & IA</span>
+            <div class="hero-header animate">
+                <span class="badge"><i class="fas fa-certificate"></i> Pós-Graduado em Arquitetura de Software & IA</span>
+                <h2 class="hero-name">JOÃO VICTOR <span class="gradient-text">BORBA MATOS</span></h2>
+            </div>
             <h1 class="animate" style="transition-delay: 0.1s;">Arquiteto de Software & <span class="gradient-text">Desenvolvedor Full Cycle</span></h1>
             <p class="animate" style="transition-delay: 0.2s;">Sistemas Corporativos • DevOps • Inteligência Artificial. Projetando ecossistemas de alta disponibilidade, plataformas SaaS multi-tenant, ERPs omnichannel e IA aplicada de ponta a ponta.</p>
             <div class="hero-btns animate" style="transition-delay: 0.3s;">
@@ -370,55 +379,53 @@
 
     <section id="about" class="section">
         <div class="container">
-            <div class="about-wrapper"
-                style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 4rem; align-items: start;">
+            <div class="about-wrapper">
                 <div class="about-text">
                     <span class="badge">Especialização & Formação</span>
                     <h2 style="margin-bottom: 1.5rem;">Arquitetura de <span class="gradient-text">Software & Inteligência Artificial</span></h2>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 1.5rem;">
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 1.5rem;">
                         <strong>Arquiteto de Software</strong> com dupla pós-graduação: <strong>Arquitetura de Software</strong> e <strong>Inteligência Artificial</strong>. Especialista em converter regras de negócio complexas em ecossistemas digitais de alta disponibilidade, plataformas SaaS multi-tenant e pipelines de automação inteligente.
                     </p>
-                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-muted); margin-bottom: 2rem;">
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--text-secondary); margin-bottom: 2rem;">
                         Minha atuação une a visão estrutural de arquitetura (Clean Architecture, DDD, microsserviços, mensageria e isolamento multi-tenant) à inteligência artificial prática (OCR assíncrono, auditoria fiscal automatizada e agentes de conversão comercial).
                     </p>
 
-                    <div class="about-highlights" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                    <div class="about-highlights">
                         <div class="highlight-item">
-                            <i class="fas fa-sitemap" style="color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                            <i class="fas fa-sitemap" style="color: var(--primary); margin-bottom: 0.5rem;"></i>
                             <h4 style="margin-bottom: 0.3rem;">Arquitetura de Software</h4>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Padrões Clean Arch, DDD, concorrência e escalabilidade com PostgreSQL e Redis.</p>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary);">Padrões Clean Arch, DDD, concorrência e escalabilidade com PostgreSQL e Redis.</p>
                         </div>
                         <div class="highlight-item">
-                            <i class="fas fa-brain" style="color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                            <i class="fas fa-brain" style="color: var(--primary); margin-bottom: 0.5rem;"></i>
                             <h4 style="margin-bottom: 0.3rem;">Inteligência Artificial</h4>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Pipelines de OCR, agentes de auditoria tributária preventiva e fluxos com LLMs.</p>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary);">Pipelines de OCR, agentes de auditoria tributária preventiva e fluxos com LLMs.</p>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-layer-group"
-                                style="color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                                style="color: var(--primary); margin-bottom: 0.5rem;"></i>
                             <h4 style="margin-bottom: 0.3rem;">SaaS Multi-Tenant</h4>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Isolamento rígido de dados corporativos, limites por planos e segurança de acesso.</p>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary);">Isolamento rígido de dados corporativos, limites por planos e segurança de acesso.</p>
                         </div>
                         <div class="highlight-item">
-                            <i class="fab fa-docker" style="color: var(--primary-color); margin-bottom: 0.5rem;"></i>
+                            <i class="fab fa-docker" style="color: var(--primary); margin-bottom: 0.5rem;"></i>
                             <h4 style="margin-bottom: 0.3rem;">DevOps & Infra Cloud</h4>
-                            <p style="font-size: 0.9rem; color: var(--text-muted);">Deploy orquestrado com Docker Compose, Nginx, Gunicorn e servidores Linux.</p>
+                            <p style="font-size: 0.9rem; color: var(--text-secondary);">Deploy orquestrado com Docker Compose, Nginx, Gunicorn e servidores Linux.</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="about-card"
-                    style="background: var(--bg-surface); padding: 2.5rem; border-radius: 20px; border: 1px solid var(--border-color); position: sticky; top: 100px;">
+                <div class="about-card">
                     <h3 style="margin-bottom: 1.5rem; font-family: 'Outfit', sans-serif;">Formação & Stack</h3>
-                    <div style="margin-bottom: 1.5rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--border-color);">
-                        <div style="font-size: 0.85rem; color: var(--primary-color); font-weight: 700; text-transform: uppercase; margin-bottom: 0.4rem;">
+                    <div style="margin-bottom: 1.5rem; padding-bottom: 1.2rem; border-bottom: 1px solid var(--border);">
+                        <div style="font-size: 0.85rem; color: var(--primary); font-weight: 700; text-transform: uppercase; margin-bottom: 0.4rem;">
                             <i class="fas fa-graduation-cap"></i> Dupla Pós-Graduação Concluída
                         </div>
-                        <div style="font-size: 0.95rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.2rem;">• Pós em Arquitetura de Software</div>
-                        <div style="font-size: 0.95rem; font-weight: 600; color: var(--text-main); margin-bottom: 0.2rem;">• Pós em Inteligência Artificial</div>
-                        <div style="font-size: 0.85rem; color: var(--text-muted);">• Graduação em Análise e Desenv. de Sistemas</div>
+                        <div style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.2rem;">• Pós em Arquitetura de Software</div>
+                        <div style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); margin-bottom: 0.2rem;">• Pós em Inteligência Artificial</div>
+                        <div style="font-size: 0.85rem; color: var(--text-secondary);">• Graduação em Análise e Desenv. de Sistemas</div>
                     </div>
-                    <div class="stack-tags" style="display: flex; flex-wrap: wrap; gap: 0.8rem;">
+                    <div class="stack-tags" style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
                         <span class="tag">Arquitetura de Software</span>
                         <span class="tag">Inteligência Artificial</span>
                         <span class="tag">Python</span>
@@ -433,8 +440,8 @@
                         <span class="tag">WhatsApp APIs</span>
                         <span class="tag">Nginx</span>
                     </div>
-                    <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border-color);">
-                    <p style="font-style: italic; color: var(--text-muted); font-size: 0.95rem;">
+                    <hr style="margin: 2rem 0; border: 0; border-top: 1px solid var(--border);">
+                    <p style="font-style: italic; color: var(--text-secondary); font-size: 0.95rem;">
                         "Arquitetura de ponta não é apenas escrever código; é antecipar gargalos e criar ecossistemas que sustentam o crescimento do negócio."
                     </p>
                 </div>
@@ -478,22 +485,22 @@
     </section>
 
     <section id="contact" class="section">
-        <div class="container" style="text-align: center; max-width: 860px;">
+        <div class="container contact-container">
             <span class="badge">Contato & Cartão Digital</span>
             <h2>Inicie seu Projeto</h2>
-            <p style="margin-bottom: 2.5rem;">Precisa de um sistema escalável, seguro e bem arquitetado? Vamos conversar sobre como posso acelerar e estruturar o seu negócio.</p>
+            <p style="margin-bottom: 2.5rem; max-width: 650px; margin-left: auto; margin-right: auto;">Precisa de um sistema escalável, seguro e bem arquitetado? Vamos conversar sobre como posso acelerar e estruturar o seu negócio.</p>
 
             <!-- Digital Business Card / Assinatura -->
-            <div class="digital-card-container" style="margin: 0 auto 3rem; max-width: 680px; background: rgba(15, 23, 42, 0.75); border: 1px solid var(--border); border-radius: 20px; padding: 1.5rem; box-shadow: 0 20px 40px rgba(0,0,0,0.4); backdrop-filter: blur(12px);">
-                <img src="assets/assinatura_joaomatos.png" alt="Cartão Digital - João Victor Borba Matos | GSTek" style="width: 100%; height: auto; border-radius: 12px; display: block; box-shadow: 0 8px 24px rgba(0,0,0,0.3);">
-                <div style="margin-top: 1.25rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <div class="digital-card-container">
+                <img src="assets/assinatura_joaomatos.png" alt="Cartão Digital - João Victor Borba Matos | GSTek" class="digital-card-img">
+                <div class="digital-card-actions">
                     <a href="assets/assinatura_joaomatos.png" download="Cartao_JoaoMatos_GSTek.png" class="btn btn-secondary" style="font-size: 0.85rem; padding: 0.6rem 1.4rem;">
                         <i class="fas fa-id-card"></i> Salvar Cartão Digital
                     </a>
                 </div>
             </div>
 
-            <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap;">
+            <div class="contact-btns">
                 <a href="mailto:joao.matos@gstek.com.br" class="btn btn-primary">
                     <i class="fas fa-envelope"></i> joao.matos@gstek.com.br
                 </a>
@@ -505,12 +512,12 @@
     </section>
 
     <footer>
-        <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
-            <div style="display: flex; align-items: center; gap: 0.75rem;">
-                <img src="assets/logo_gstek.png" alt="GSTek" style="height: 32px; width: 32px; object-fit: contain; border-radius: 6px;">
-                <span style="font-size: 0.95rem; font-weight: 600; color: var(--text-primary); letter-spacing: 0.5px;">GSTek <span style="font-size: 0.8rem; color: var(--text-secondary); font-weight: 400;">— Gestão de Sistemas e Tecnologia</span></span>
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="assets/logo_gstek.png" alt="GSTek" class="footer-logo">
+                <span class="footer-text">GSTek <span class="footer-subtext">— Gestão de Sistemas e Tecnologia</span></span>
             </div>
-            <p style="margin: 0; color: var(--text-secondary); font-size: 0.85rem;">&copy; 2026 João Victor Borba Matos | GSTek. Built with Excellence.</p>
+            <p class="footer-copy">&copy; 2026 João Victor Borba Matos | GSTek. Built with Excellence.</p>
         </div>
     </footer>
 
